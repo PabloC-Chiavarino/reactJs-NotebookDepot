@@ -1,19 +1,21 @@
 .cart--container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     justify-content: center;
     align-items: center;
     user-select: none;
     letter-spacing: 1px;
     background-color: whitesmoke;
+    position: relative;
+    margin-bottom: -27rem;
 }
 
 .cart__title--container {
     width: 30%;
     position: absolute;
-    top: 66px;
+    top: 90px;
     display: flex;
     justify-content: end;
     border-bottom: 2px solid black;
@@ -65,14 +67,13 @@
     width: 65%;
     position: absolute;
     left: 30px;
-    bottom: 85px;
+    bottom: 126px;
     overflow-y: auto;
     font-weight: lighter;
     letter-spacing: 0.5px;
     z-index: 1;
     overflow-x: hidden;
     scrollbar-color: rgb(145, 145, 145) #cccccc;
-    scrollbar-width: thin;
 }
 
 .cart__empty {
@@ -84,7 +85,7 @@
 
 .cart__total--container {
     position: absolute;
-    top: 180px;
+    top: 200px;
     color: rgb(0, 0, 0);
     font-size: 12px;
     right: 2rem;
@@ -97,10 +98,9 @@
 
 .cart__confirm--container{
     display: flex;
-    align-items: center;
     font-size: 12px;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    top: 25px;
     z-index: 1;
     color: whitesmoke;
     gap: 20px;
@@ -128,10 +128,11 @@
     position: absolute;
     z-index: 1;
     color: whitesmoke;
-    top: 95px;
+    top: 120px;
     gap: 1rem;
-    width: 50%;
-    right: 0;
+    width: 30%;
+    right: 0px;
+    z-index: 2;
 }
 
 .cart__erase--container:hover {

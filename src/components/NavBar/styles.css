@@ -51,10 +51,10 @@
 }
 
 .categories {
-    transition: 0.06s;
-    color: antiquewhite;
+    transition: 0.25s;
+    color: rgb(219, 219, 219);
     text-decoration: none;
-    height: 1px;
+    height: 0px;
 }
 
 .categories__list {
@@ -67,12 +67,12 @@
 }
 
 .categories__list a.active {
-    box-shadow: 0px -30px 0.5px 1px #625ec4
+    box-shadow: 0px -30px 0.5px 1px white
 }
 
 .categories:hover {
     cursor: pointer;
     text-decoration: none;
-    text-shadow:4px 3px 2px black;
-    color: #625ec4;
+    text-shadow:2px 2px 2px black;
+    color: white;
 }

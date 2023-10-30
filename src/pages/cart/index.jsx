@@ -111,7 +111,7 @@ const Cart = () => {
                 )
             }
                 <div className='navigate__options--container'>
-                    <MainBtn type='default' text='Ver productos' />
+                    <MainBtn type='default' text='Ver más productos' />
                     <MainBtn type='back' text='Volver' />
                 </div>
             </div>

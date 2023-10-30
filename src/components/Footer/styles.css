@@ -8,6 +8,7 @@
   position: relative;
   z-index: 2;
   user-select: none;
+  top: 425px;
 }
 
 .footer__subcontainer {
@@ -56,7 +57,7 @@
   position: absolute;
   top: 1rem;
   right: 0;
-  color: #5151ff;
+  color: #ffffff;
 }
 
 .footer__social {

@@ -7,7 +7,7 @@
   position: fixed;
   font-weight: unset;
   letter-spacing: 1px;
-  z-index: 2;
+  z-index: 3;
   bottom: 0;
   border-radius: 3px;
 }

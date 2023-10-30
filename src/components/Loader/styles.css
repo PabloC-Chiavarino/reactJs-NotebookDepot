@@ -37,7 +37,7 @@
     width: 67px;
     height: 13px;
     position: absolute;
-    bottom: 21rem;
+    top: 6rem;
 }
 
 .loader__container--ellipsis div {
@@ -71,9 +71,9 @@
 .loader__container span {
     position: absolute;
     height: fit-content;
-    bottom: 18rem;
     font-family: 'wix madefor display', sans-serif;
     letter-spacing: 1px;
     font-weight: unset;
     font-size: 1.3rem;
+    top: 8rem;
 }

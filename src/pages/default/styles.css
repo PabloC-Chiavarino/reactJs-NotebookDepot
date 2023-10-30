@@ -3,6 +3,7 @@
     margin: auto;
     background-color: rgb(240, 240, 240);
     position: relative;
+    top: 425px;
     z-index: 2;
     padding-top: 1rem;
 }

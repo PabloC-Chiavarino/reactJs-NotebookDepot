@@ -9,9 +9,7 @@ const useFirestore = ( requestType ) => {
     const [ data, setData ] = useState([]);
     const [ error, setError ] = useState('-');
     const [ loading, setLoading ] = useState(false);
-    
-    //console.log('Loading:',loading, 'Data Recieved:' ,data, 'Error:', error)
-    
+        
     useEffect( () => {       
         setLoading(true)
         

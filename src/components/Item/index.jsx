@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 const Item = ({ product }) => {
-    
+
     const { id, category, name, img, detail, price, stock } = product;
 
     return (
