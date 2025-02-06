@@ -1,25 +1,25 @@
-
 .detail__container {
-    display: flex;
-    background-color: white;
-    width: 95%;
-    font-family: 'wix madefor display', sans-serif;
-    font-size: 15px;
-    box-shadow: 1px 1px 3px rgb(46, 46, 46);
-    margin-top: 50px;
-    transition: 0.25s;
-    position: absolute;
-    height: 30rem;
-    top: 45px;
-    background-color: whitesmoke;
-    border-radius: 4px;
-  }
+  display: flex;
+  background-color: white;
+  width: 95%;
+  max-width: 80rem;
+  font-family: 'wix madefor display', sans-serif;
+  font-size: 15px;
+  box-shadow: 1px 1px 3px rgb(46, 46, 46);
+  margin-top: 50px;
+  transition: 0.25s;
+  position: absolute;
+  height: 28rem;
+  top: 70px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
 
 .detail__img {
-    width: 430px;
-    height: 430px;
-    position: relative;
-    padding-left: 20px;
+  width: 430px;
+  height: 430px;
+  position: relative;
+  padding-left: 20px;
 }
 
 .detail__description--container {
@@ -66,7 +66,7 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  bottom: 2rem;
+  bottom: 1rem;
 }
 
 .detail__stock--container {

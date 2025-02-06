@@ -1,5 +1,5 @@
 .buyformModal__container {
-  width: 99%;
+  width: 100%;
   background-color: #282828;
   height: 24rem;
   transition: 0.2s ease-in-out;
@@ -9,7 +9,6 @@
   letter-spacing: 1px;
   z-index: 3;
   bottom: 0;
-  border-radius: 3px;
 }
 
 .buyFormModal__sliderDown {

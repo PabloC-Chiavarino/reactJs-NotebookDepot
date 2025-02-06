@@ -1,25 +1,28 @@
-import { useFirestore, useScrollToElement } from '../../hooks'
-import { ToastContainer } from 'react-toastify';
-import { throwAddPopUp } from '../../constants/utils';
+import { useRef } from 'react'
+import { useFirestore, useScroll } from '../../hooks'
+import { ToastContainer } from 'react-toastify'
+import { throwAddPopUp } from '../../constants/utils'
 import { Loader, ItemDetail } from '../../components'
-import 'react-toastify/dist/ReactToastify.css';
-import "./styles.css"
+import 'react-toastify/dist/ReactToastify.css'
+import './styles.css'
 
 const ItemDetailContainer = () => {
-    
-    const { loading, data } = useFirestore('unity')
-    const toView = useScrollToElement()
+  const ref = useRef()
+  const { loading, data } = useFirestore('unity')
+  const toView = useScroll(ref, 'element')
 
-    return (
-        <>  
-            <div className='product__Detailcontainer' >
-                {loading ? <Loader greeting={'Cargando'}/> : (
-                        <ItemDetail product={data} onAddPopUp={throwAddPopUp} />
-                    )}
-                    <ToastContainer />
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className='product__Detailcontainer' ref={ref}>
+        {loading
+          ? <Loader greeting='Cargando' />
+          : (
+            <ItemDetail product={data} onAddPopUp={throwAddPopUp} />
+            )}
+        <ToastContainer />
+      </div>
+    </>
+  )
 }
 
 export default ItemDetailContainer

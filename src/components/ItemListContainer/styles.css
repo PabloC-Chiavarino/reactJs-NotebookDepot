@@ -1,11 +1,11 @@
 .products__container {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
     user-select: none;
     height: 650px;
-    width: 68rem;
+    width: 53%;
     margin: auto;
     overflow-x: auto;
     scroll-behavior: smooth;
-    top: 425px;
+    margin-bottom: -4rem;
 }

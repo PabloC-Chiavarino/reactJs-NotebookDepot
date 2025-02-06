@@ -7,7 +7,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
 }
 
 .cartContainer:hover {
@@ -19,7 +18,7 @@
     font-family: 'anton', sans-serif;
     font-size: 12px;
     z-index: 1;
-    background-color: #ff322f;
+    background-color: crimson;
     display: flex;
     align-items: center;
     position: relative;

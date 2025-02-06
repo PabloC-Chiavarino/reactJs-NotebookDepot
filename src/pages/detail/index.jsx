@@ -1,9 +1,9 @@
-import { ItemDetailContainer } from "../../components";
+import { ItemDetailContainer } from '../../components'
 
 const detail = () => {
-    return (
-        <ItemDetailContainer />
-    )
+  return (
+    <ItemDetailContainer />
+  )
 }
 
 export default detail

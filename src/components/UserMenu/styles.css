@@ -9,6 +9,7 @@
     right: 0;
     transform: translate(100%);
     transition: 0.2s ease-in-out;
+    z-index: 1;
 }
 
 .userMenu__close {
@@ -46,16 +47,18 @@
     display: flex;
     position: absolute;
     flex-direction: column;
-    row-gap: 10px;
-    bottom: 7rem;
+    bottom: 8rem;
     width: 100%;
     align-items: center;
 }
 
 .userMenu__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 44px;
     text-decoration: none;
-    width: 225px;
+    width: 70%;
     font-family: 'wix madefor display', sans-serif;
     color: #292929;
     border: 1px solid;
@@ -65,18 +68,18 @@
     position: relative;
     z-index: 1;
     background-color: transparent;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(122, 122, 122);
+        color: white;
+        border-color: transparent;
+    }
 }
 
-.userMenu__button:hover {
-    cursor: pointer;
-    background-color: rgb(122, 122, 122);
-    color: white;
-    border-color: transparent;
+.userMenu__accountSet {
+    color: rgb(51, 51, 153);
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.userMenu__button:hover {
-    cursor: pointer;
-    background-color: rgb(122, 122, 122);
-    color: white;
-    border-color: transparent;
-}
