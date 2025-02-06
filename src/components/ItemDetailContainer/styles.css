@@ -7,6 +7,8 @@
     align-items: center;
     user-select: none;
     background-color: whitesmoke;
+    background-image: url('../../assets/imgs/defaultBackground.svg');
+    background-size: cover;
     position: relative;
     margin-bottom: -31rem;
 }

@@ -1,8 +1,11 @@
 import { ItemDetailContainer } from '../../components'
+import './styles.css'
 
 const detail = () => {
   return (
-    <ItemDetailContainer />
+    <section>
+      <ItemDetailContainer />
+    </section>
   )
 }
 

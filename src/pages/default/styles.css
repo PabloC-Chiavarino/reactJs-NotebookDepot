@@ -2,6 +2,8 @@
     width: 100%;
     margin: auto;
     background-color: rgb(240, 240, 240);
+    background-image: url('../../assets/imgs/defaultBackground.svg');
+    background-size: cover;
     position: relative;
     top: 425px;
     z-index: 2;
