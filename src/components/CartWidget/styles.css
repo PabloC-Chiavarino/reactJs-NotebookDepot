@@ -1,6 +1,6 @@
 .cartContainer {
-    width: 75px;
-    background-color: rgba(220,220,220);
+    width: 60px;
+    background-color: rgb(189, 189, 189);
     height: inherit;
     right: 0;
     position: absolute;
