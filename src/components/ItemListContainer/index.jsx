@@ -1,5 +1,5 @@
 import { useParams, useLocation } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useFirestore, useScroll } from '../../hooks'
 import { Loader, ItemList, SectionTitle, BackBtn, ForwardBtn } from '../../components'
 import './styles.css'
@@ -10,6 +10,7 @@ const ItemListContainer = () => {
   const location = useLocation()
   const { categoryId } = useParams()
   const { loading, data } = useFirestore('products')
+
   const maxItemsShow = data.length > 3
 
   const shouldScroll = (
