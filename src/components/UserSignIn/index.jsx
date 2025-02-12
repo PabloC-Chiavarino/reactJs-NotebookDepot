@@ -11,24 +11,27 @@ const UserSignIn = () => {
       className='userSignIn__container'
     >
       <div>
-        <h2 style={{ letterSpacing: '1px' }}>Hola !</h2>
+        <h1 style={{ letterSpacing: '1px', fontWeight: '500' }}>Hola !</h1>
       </div>
       <div className='userSignIn__form-container'>
         <label>Ingresar correo electrónico</label>
         <input
           className='userSignIn__input'
           type='text'
+          name='email'
         />
         <label>Ingresar contraseña</label>
         <input
           className='userSignIn__input'
           type='password'
+          name='password'
         />
       </div>
-      <div className='userMenu__options-container'>
-        <button className='userMenu__button'>Iniciar Sesión</button>
-        <div className='userMenu__options-subcontainer'>
-          <h4 style={{ fontWeight: 'normal' }}>Aún no tienes una cuenta ?</h4><Link to='/account/SignUp'><b className='userMenu__accountSet'>Registrate</b></Link>
+      <div className='userSignIn__options-container'>
+        <button className='userSignIn__button'>Iniciar Sesión</button>
+        <div className='userSignIn__options-subcontainer'>
+          <h4 style={{ fontWeight: 'normal' }}>Aún no tienes una cuenta ?</h4>
+          <Link to='/account/SignUp'><b className='userSignIn__accountSet'>Registrate</b></Link>
         </div>
       </div>
     </div>

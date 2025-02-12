@@ -1,10 +1,9 @@
-import { ItemListContainer, Carousel } from '../../components'
+import { ItemListContainer } from '../../components'
 import './styles.css'
 
 const DefaultPage = () => {
   return (
     <>
-      <Carousel />
       <section className='productsSection'>
         <ItemListContainer />
       </section>

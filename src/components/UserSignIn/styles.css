@@ -1,50 +1,79 @@
 .userSignIn__container {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
-    top: 70px;
-    height: 85vh;
-    margin-bottom: -31rem;
-    background-image: url('../../assets/imgs/accountBackground.svg');
-    padding-top: 5rem;
+   width: 100dvw;
+   height: calc(100dvh - 60px);
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   align-items: center;
+   background-image: url("../../assets/imgs/defaultBackground.svg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding-top: 7rem;
+   margin-bottom: -100dvh;
 }
 
 .userSignIn__form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   display: flex;
+   width: 280px;
+   flex-direction: column;
+   align-items: center;
 }
 
 .userSignIn__input {
-    width: 90%;
-    height: 1.3rem;
-    border-radius: 0.7rem;
-    background-color: whitesmoke;
-    font-size: 1rem;
-    box-shadow: 3px 3px 3px 0px black;
-    border: none;
-    padding-inline-start: 1rem;
+   width: 100%;
+   margin-top: 1rem;
+   margin-bottom: 2rem;
+   height: 1.3rem;
+   border-radius: 2px;
+   background-color: whitesmoke;
+   font-size: 1rem;
+   box-shadow: 1px 1px 2px 1px #848484;
+   border: none;
 }
 
-.userMenu__options-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    align-items: center;
+.userSignIn__options-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-.userMenu__accountSet {
-    color: rgb(19, 19, 232);
-
-    &:hover {
-        cursor: pointer;
-    }
+.userSignIn__button {
+   display: flex;
+   margin-top: 2rem;
+   justify-content: center;
+   align-items: center;
+   height: 44px;
+   text-decoration: none;
+   width: 70%;
+   font-family: "wix madefor display", sans-serif;
+   color: #292929;
+   border: 1px solid;
+   border-radius: 2px;
+   transition: 0.3s;
+   letter-spacing: 1px;
+   font-size: 14px;
+   position: relative;
+   z-index: 1;
+   background-color: transparent;
+   &:hover {
+      cursor: pointer;
+      background-color: rgb(122, 122, 122);
+      color: white;
+      border-color: transparent;
+   }
 }
 
-.userMenu__options-subcontainer {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.userSignIn__accountSet {
+   color: rgb(19, 19, 232);
+
+   &:hover {
+      cursor: pointer;
+   }
+}
+
+.userSignIn__options-subcontainer {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   margin-top: -5px;
 }

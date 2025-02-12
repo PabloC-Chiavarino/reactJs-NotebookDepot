@@ -15,7 +15,7 @@ const UserMenu = ({ show, onClose }) => {
       <h2 className='userMenu__info'>Aún no has iniciado sesión</h2>
       <div className='userMenu__options--container'>
         <Link to='/account/signIn' className='userMenu__button' onClick={onClose}>Iniciar Sesión</Link>
-        <div className='userMenu__options-subcontainer'>
+        <div className='userMenu__options--subcontainer'>
           <h4 style={{ fontWeight: 'normal' }}>Aún no tienes una cuenta?</h4><Link onClick={onClose} to='/account/signUp'><b className='userMenu__accountSet'>Regístrate</b></Link>
         </div>
       </div>

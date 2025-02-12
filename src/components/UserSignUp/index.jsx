@@ -7,35 +7,35 @@ const UserSignUp = ({ handleSubmit }) => {
 
   return (
     <div
-      className='userReg__container'
+      className='userSignUp__container'
     >
       <div>
-        <h2 style={{ letterSpacing: '1px', fontSize: '1.9rem' }}>Bienvenido !</h2>
+        <h1 style={{ letterSpacing: '1px', fontWeight: '500' }}>Bienvenido !</h1>
       </div>
-      <form ref={formRef} className='userReg__form-container' onSubmit={handleSubmit}>
-        <label style={{ padding: '5px' }}>Ingresar correo electrónico</label>
+      <form ref={formRef} className='userSignUp__form-container' onSubmit={handleSubmit}>
+        <label>Ingresar correo electrónico</label>
         <input
-          className='userReg__input'
+          className='userSignUp__input'
           type='text'
           name='email'
         />
-        <label style={{ padding: '5px' }}>Ingresar contraseña de 6 a 9 dígitos</label>
+        <label>Ingresar contraseña</label>
         <input
-          className='userReg__input'
+          className='userSignUp__input'
           type='password'
           name='password'
         />
-        <label style={{ padding: '5px' }}>Confirmación de contraseña</label>
+        <label>Confirmación de contraseña</label>
         <input
-          className='userReg__input'
+          className='userSignUp__input'
           type='password'
           name='passwordConfirm'
         />
-        <div className='userMenu__options-container'>
-          <button className='userMenu__button' type='submit'>Crear Cuenta</button>
-          <div className='userMenu__options-subcontainer'>
+        <div className='userSignUp__options-container'>
+          <button className='userSignUp__button' type='submit'>Crear Cuenta</button>
+          <div className='userSignUp__options-subcontainer'>
             <h4 style={{ fontWeight: 'normal' }}>Ya tienes una cuenta ?</h4>
-            <Link to='/account/signIn'><b className='userMenu__accountSet'>Iniciar Sesión</b></Link>
+            <Link to='/account/signIn'><b className='userSignUp__accountSet'>Iniciar Sesión</b></Link>
           </div>
         </div>
       </form>

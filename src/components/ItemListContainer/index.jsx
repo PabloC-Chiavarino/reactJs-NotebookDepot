@@ -1,26 +1,35 @@
-import { useParams } from 'react-router-dom'
-import { useRef } from 'react'
+import { useParams, useLocation } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import { useFirestore, useScroll } from '../../hooks'
-import { Loader, ItemList, SectionTitle, BackBtn, FowardBtn } from '../../components'
+import { Loader, ItemList, SectionTitle, BackBtn, ForwardBtn } from '../../components'
 import './styles.css'
 
 const ItemListContainer = () => {
-  const ref = useRef()
-  const toView = useScroll(ref, 'top')
+  const sectionRef = useRef()
+  const productsRef = useRef()
+  const location = useLocation()
   const { categoryId } = useParams()
   const { loading, data } = useFirestore('products')
   const maxItemsShow = data.length > 3
 
+  const shouldScroll = (
+    location.pathname !== '/'
+  )
+
+  const scrollType = shouldScroll ? 'element' : 'top'
+
+  useScroll(sectionRef, scrollType)
+
   const scrollBack = () => {
-    ref.current.scrollLeft = -366
+    productsRef.current.scrollLeft = -400
   }
 
   const scrollForward = () => {
-    ref.current.scrollLeft = 400
+    productsRef.current.scrollLeft = 400
   }
 
   return (
-    <section className='products__container' ref={ref}>
+    <section className='products__container' ref={sectionRef}>
       {loading
         ? (
             categoryId
@@ -34,19 +43,11 @@ const ItemListContainer = () => {
         : (
           <>
             <SectionTitle section={categoryId || 'Productos Destacados'} />
-            {
-                        maxItemsShow
-                          ? (
-                            <>
-                              <BackBtn scrollBack={scrollBack} />
-                              <ItemList data={data} />
-                              <FowardBtn scrollFoward={scrollForward} />
-                            </>
-                            )
-                          : (
-                            <ItemList data={data} />
-                            )
-                    }
+            <div ref={productsRef} className={`products__container--items ${maxItemsShow ? 'has-buttons' : ''}`}>
+              {maxItemsShow && <BackBtn scrollBack={scrollBack} />}
+              <ItemList data={data} />
+              {maxItemsShow && <ForwardBtn scrollForward={scrollForward} />}
+            </div>
           </>
           )}
     </section>

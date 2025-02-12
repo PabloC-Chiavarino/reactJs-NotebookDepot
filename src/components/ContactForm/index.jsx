@@ -9,8 +9,8 @@ const ContactForm = () => {
     e.preventDefault()
 
     emailjs.sendForm('ND_contact', 'contact', formRef.current, 'hesIfng0YOyoZM2dr')
-      .then((msg_body) => {
-        console.log(msg_body)
+      .then((msgBody) => {
+        console.log(msgBody)
         formRef.current.reset()
       }
       )
@@ -24,10 +24,8 @@ const ContactForm = () => {
         <h3 className='contactForm__title'>Dejanos tu consulta y te responderemos a la brevedad !</h3>
         <label className='contactForm__label'>Nombre</label>
         <input className='contactForm__input' type='text' name='user_name' required />
-
         <label className='contactForm__label'>Email</label>
         <input className='contactForm__input' type='email' name='user_email' required />
-
         <label className='contactForm__label'>Mensaje</label>
         <textarea className='contactForm__msg' name='message' minLength='20' cols='40' rows='6' placeholder='Tus comentarios me ayudan a mejorar el proyecto ! con gusto los recibiré y responderé a la brevedad posible !' required />
         <input className='contactForm__submit' type='submit' value='Enviar' />

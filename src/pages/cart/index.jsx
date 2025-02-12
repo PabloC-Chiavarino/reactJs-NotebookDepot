@@ -94,7 +94,6 @@ const Cart = () => {
                   </div>
                   <div className='cart__erase--container'>
                     <img onClick={cartEraseAll} className='cart__erase' src={binBig} alt='erase cart' />
-                    <p>Vaciar Carrito</p>
                   </div>
                   <div className='cart__list--container'>
                     <CartList />
@@ -113,7 +112,6 @@ const Cart = () => {
                     <h3>Envío: {cartTotalProducts() >= 2 ? 'Gratis !' : '$ 2500'}</h3>
                     <h2>Total: $ {cartTotalPrice() + 2500}</h2>
                     <div className='cart__confirm--container'>
-                      <p>Confirmar compra</p>
                       <img onClick={handleOnClick} className='cart__confirm' src={confirmImg} alt='confirm cart' />
                     </div>
                   </div>

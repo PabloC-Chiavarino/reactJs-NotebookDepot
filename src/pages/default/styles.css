@@ -1,11 +1,11 @@
 .productsSection {
-    width: 100%;
-    margin: auto;
-    background-color: rgb(240, 240, 240);
-    background-image: url('../../assets/imgs/defaultBackground.svg');
-    background-size: cover;
-    position: relative;
-    top: 100dvh;
-    z-index: 2;
-    padding-top: 1rem;
+   width: 100dvw;
+   height: 110dvh;
+   margin: auto;
+   box-shadow: 0px -1.5px 5px 1px #131313;
+   background-image: url("../../assets/imgs/defaultBackground.svg");
+   background-size: cover;
+   position: relative;
+   top: 100dvh;
+   z-index: 1;
 }

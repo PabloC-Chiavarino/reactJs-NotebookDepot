@@ -1,36 +1,35 @@
 @keyframes typing {
-    0% {
-        color: transparent;
-    }
-    50%{
-        color: transparent;   
-    }
-    100% {
-        color: black;    
-    }
+   0% {
+      color: transparent;
+   }
+   50% {
+      color: transparent;
+   }
+   100% {
+      color: black;
+   }
 }
 
 .title__container {
-    width: 80%;
-    height: 45px;
-    position: absolute;
-    font-family: 'wix madefor display';
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
-    letter-spacing: 1px;
-    overflow: hidden;
+   width: 100%;
+   height: 45px;
+   margin-top: 4rem;
+   margin-left: 3rem;
+   position: absolute;
+   font-family: "wix madefor display";
+   font-weight: bold;
+   display: flex;
+   font-size: 1.25rem;
+   letter-spacing: 1px;
 }
 
 .title__container h1 {
-    display: flex;
-    font-weight: lighter;
+   display: flex;
+   font-weight: lighter;
 }
 
-.title__underscore{
-    animation-name:  typing;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+.title__underscore {
+   animation-name: typing;
+   animation-duration: 1s;
+   animation-iteration-count: infinite;
 }

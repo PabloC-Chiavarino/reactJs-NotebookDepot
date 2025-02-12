@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@500;800&display=swap" rel="stylesheet"');
 
 body {
-  margin: auto;
-  background-color: white;
-  overflow-y: auto;
-  overflow-x: hidden;
-  font-family: 'Wix Madefor Display', sans-serif;
+   margin: auto;
+   background-color: white;
+   overflow-y: auto;
+   overflow-x: hidden;
+   font-family: "Wix Madefor Display", sans-serif;
+   user-select: none;
 }
