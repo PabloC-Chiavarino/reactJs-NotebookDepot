@@ -1,0 +1,84 @@
+.card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   border-radius: 3px;
+   background-color: rgb(206, 206, 206);
+   margin: 1rem 0.5rem 0.5rem 0.5rem;
+   padding: 1rem;
+   height: 435px;
+   width: 285px;
+   box-shadow: 1px 1px 3px rgb(46, 46, 46);
+   transition: 0.25s ease;
+   position: relative;
+   background-color: #eaeaea;
+}
+
+.card:hover {
+   background-color: whitesmoke;
+   cursor: pointer;
+   transform: translateY(-10px);
+}
+
+.card__img {
+   width: 190px;
+   margin-bottom: -1rem;
+   margin-top: -1.6rem;
+}
+
+.card__name {
+   font-size: 1.1rem;
+   margin-top: 0;
+   margin-bottom: 0;
+   color: rgb(50, 50, 50);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 265px;
+}
+
+.card__detail--container {
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   height: 175px;
+   position: relative;
+   top: 10px;
+}
+
+.card__detail {
+   font-size: 14px;
+   color: rgb(40, 40, 40);
+   letter-spacing: 0.5px;
+}
+
+.card__price--container {
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: flex-end;
+   position: relative;
+   top: 10px;
+   right: 10px;
+}
+
+.card__price {
+   font-size: 1.3rem;
+   font-weight: bolder;
+   color: rgb(50, 50, 50);
+   letter-spacing: 0.7px;
+}
+
+.card__stock--container {
+   display: flex;
+   width: 100%;
+   position: relative;
+   top: 10px;
+   left: 10px;
+}
+
+.card__stock {
+   font-size: 0.8rem;
+   color: green;
+}

@@ -1,0 +1,81 @@
+@keyframes ellipsis--1 {
+   0% {
+      scale: 0;
+   }
+   100% {
+      scale: 1;
+   }
+}
+
+@keyframes ellipsis--2 {
+   0% {
+      transform: translate(0, 0);
+   }
+   100% {
+      transform: translate(24px, 0);
+   }
+}
+
+@keyframes ellipsis--3 {
+   0% {
+      scale: 1;
+   }
+   100% {
+      scale: 0;
+   }
+}
+
+.loader__container {
+   display: flex;
+   width: 100%;
+   z-index: 2;
+   justify-content: center;
+   align-self: center;
+   position: relative;
+   bottom: 3rem;
+}
+
+.loader__container--ellipsis {
+   width: 67px;
+   height: 13px;
+   position: absolute;
+   top: 2.2rem;
+}
+
+.loader__container--ellipsis div {
+   border-radius: 50%;
+   background-color: #595959;
+   position: absolute;
+   width: 13px;
+   height: 13px;
+   animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader__container--ellipsis div:nth-child(1) {
+   animation: ellipsis--1 0.6s infinite;
+}
+
+.loader__container--ellipsis div:nth-child(2) {
+   left: 1px;
+   animation: ellipsis--2 0.6s infinite;
+}
+
+.loader__container--ellipsis div:nth-child(3) {
+   left: 25px;
+   animation: ellipsis--2 0.6s infinite;
+}
+
+.loader__container--ellipsis div:nth-child(4) {
+   left: 52px;
+   animation: ellipsis--3 0.6s infinite;
+}
+
+.loader__container span {
+   position: absolute;
+   height: fit-content;
+   font-family: "wix madefor display", sans-serif;
+   letter-spacing: 1px;
+   font-weight: unset;
+   font-size: 1.4rem;
+   top: 4.5rem;
+}

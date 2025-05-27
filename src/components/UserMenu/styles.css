@@ -1,0 +1,92 @@
+.userMenu__container {
+   display: flex;
+   justify-content: center;
+   width: 25%;
+   height: 100vh;
+   padding: 2rem;
+   background-color: #dcdcdc;
+   position: fixed;
+   right: 0;
+   transform: translate(100%);
+   transition: 0.2s ease-in-out;
+   z-index: 1;
+}
+
+.userMenu__close {
+   position: absolute;
+   top: 1rem;
+   left: 1.5rem;
+   cursor: pointer;
+   z-index: 1;
+   font-size: 18px;
+}
+
+.userMenu__accountIcon--container {
+   width: 100%;
+   height: 40%;
+   display: flex;
+   justify-content: center;
+   position: absolute;
+}
+
+.userMenu__accountIcon {
+   width: 8rem;
+   height: 8rem;
+   align-self: end;
+}
+
+.userMenu__info {
+   font-size: 1.25rem;
+   width: 100%;
+   position: absolute;
+   text-align: center;
+   align-self: center;
+}
+
+.userMenu__options--container {
+   display: flex;
+   position: absolute;
+   flex-direction: column;
+   bottom: 8rem;
+   width: 100%;
+   align-items: center;
+}
+
+.userMenu__options--subcontainer {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   margin-top: -5px;
+}
+
+.userMenu__button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 44px;
+   text-decoration: none;
+   width: 50%;
+   font-family: "wix madefor display", sans-serif;
+   color: #292929;
+   border: 1px solid;
+   border-radius: 2px;
+   transition: 0.3s;
+   letter-spacing: 1px;
+   font-size: 14px;
+   position: relative;
+   z-index: 1;
+   background-color: transparent;
+   &:hover {
+      cursor: pointer;
+      background-color: rgb(122, 122, 122);
+      color: white;
+      border-color: transparent;
+   }
+}
+
+.userMenu__accountSet {
+   color: rgb(51, 51, 153);
+   &:hover {
+      cursor: pointer;
+   }
+}

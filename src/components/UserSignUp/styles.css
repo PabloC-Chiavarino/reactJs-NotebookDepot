@@ -1,0 +1,80 @@
+.userSignUp__container {
+   width: 100dvw;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   align-items: center;
+   height: calc(100dvh - 60px);
+   background-image: url("../../assets/imgs/defaultBackground.svg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding-top: 7rem;
+   margin-bottom: -100dvh;
+   animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.userSignUp__form-container {
+   display: flex;
+   width: 280px;
+   flex-direction: column;
+   align-items: center;
+}
+
+.userSignUp__input {
+   width: 100%;
+   margin-top: 1rem;
+   margin-bottom: 2rem;
+   height: 1.3rem;
+   border-radius: 2px;
+   background-color: whitesmoke;
+   font-size: 1rem;
+   box-shadow: 1px 1px 2px 1px #848484;
+   border: none;
+}
+
+.userSignUp__options-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+   bottom: 1.5rem;
+}
+
+.userSignUp__button {
+   display: flex;
+   margin-top: 2rem;
+   justify-content: center;
+   align-items: center;
+   height: 44px;
+   text-decoration: none;
+   width: 70%;
+   font-family: "wix madefor display", sans-serif;
+   color: #292929;
+   border: 1px solid;
+   border-radius: 2px;
+   transition: 0.3s;
+   letter-spacing: 1px;
+   font-size: 14px;
+   position: relative;
+   background-color: transparent;
+   &:hover {
+      cursor: pointer;
+      background-color: rgb(122, 122, 122);
+      color: white;
+   }
+}
+
+.userSignUp__accountSet {
+   color: rgb(19, 19, 232);
+
+   &:hover {
+      cursor: pointer;
+   }
+}
+
+.userSignUp__options-subcontainer {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   margin-top: -5px;
+}

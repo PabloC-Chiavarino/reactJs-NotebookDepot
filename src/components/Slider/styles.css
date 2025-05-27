@@ -1,0 +1,91 @@
+.slider__container {
+   width: 25%;
+   height: 100%;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   position: fixed;
+   right: 0;
+   background-color: ghostwhite;
+   font-family: "wix madefor display", sans-serif;
+   background-color: #dcdcdc;
+   transition: 0.2s ease-in-out;
+   user-select: none;
+   z-index: 4 !important;
+}
+
+.slider__closeButton {
+   position: absolute;
+   top: 1rem;
+   color: black;
+   transition: 0.2s ease-out;
+   font-size: 18px;
+}
+
+.slider__closeButton:hover {
+   cursor: pointer;
+   color: #484848;
+}
+
+.slider__title {
+   border-bottom: 1px solid black;
+   padding-bottom: 1rem;
+   color: #484848;
+   width: 100%;
+   font-size: 26px;
+}
+
+.slider__empty {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: unset;
+   position: relative;
+   top: 7rem;
+   font-size: 21px;
+}
+
+.slider__listContainer {
+   height: 50%;
+   overflow-y: auto;
+   overflow-x: hidden;
+   color: #2d2d2d;
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+}
+
+.slider__checkoutBtn--container {
+   height: 50px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   position: absolute;
+   bottom: 90px;
+   right: 0px;
+}
+
+.slider__checkoutBtn {
+   display: flex;
+   width: 205px;
+   align-items: center;
+   justify-content: center;
+   height: 44px;
+   text-decoration: none;
+   border: none;
+   border-radius: 2px;
+   color: #292929;
+   transition: 0.3s;
+   letter-spacing: 0.7px;
+   font-size: 15px;
+   border: 1px solid black;
+   position: relative;
+   bottom: 1rem;
+}
+
+.slider__checkoutBtn:hover {
+   cursor: pointer;
+   background-color: rgb(122, 122, 122);
+   color: white;
+   border-color: transparent;
+}

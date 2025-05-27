@@ -1,0 +1,24 @@
+.product__Detailcontainer {
+   display: flex;
+   flex-direction: row;
+   height: 100vh;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   user-select: none;
+   background-color: whitesmoke;
+   background-image: url("../../assets/imgs/defaultBackground.svg");
+   background-size: cover;
+   position: relative;
+   margin-bottom: -100dvh;
+}
+
+.backBtn--container {
+   position: relative;
+   top: 14rem;
+}
+
+.Toastify__toast-container--top-right {
+   top: 5em;
+   right: 1em;
+}

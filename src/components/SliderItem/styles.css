@@ -1,0 +1,75 @@
+.slider__item--container {
+   display: flex;
+   background-color: #d0d0d0;
+   align-items: center;
+   height: 34%;
+   width: 100%;
+   font-weight: bold;
+   letter-spacing: 1px;
+}
+
+.slider__item--img {
+   width: 80px;
+   position: relative;
+   left: 8px;
+}
+
+.slider__item--name {
+   position: relative;
+   left: 1.4rem;
+   font-size: 15px;
+   top: 35px;
+   width: 190px;
+}
+
+.slider__item--price {
+   position: relative;
+   font-size: 15px;
+   left: 5rem;
+   top: 18px;
+   font-weight: lighter;
+}
+
+.slider__item--quantity {
+   color: #484848;
+   position: relative;
+   left: 3rem;
+   bottom: 35px;
+   font-size: 13px;
+}
+
+.slider__item--options {
+   display: flex;
+   width: 60px;
+   position: sticky;
+   right: 27px;
+   margin-top: 75px;
+   height: 40px;
+}
+
+.slider__item--minus {
+   width: 23px;
+   height: 23px;
+   cursor: pointer;
+   border-radius: 50%;
+   background-color: #c4cada91;
+   transition: 0.25s;
+   margin-right: 2rem;
+}
+
+.slider__item--minus:hover {
+   cursor: pointer;
+   transform: rotate(180deg);
+}
+
+.slider__item--delete {
+   margin-left: 0.4rem;
+   transition: 0.2s;
+   position: absolute;
+   right: 0;
+}
+
+.slider__item--delete:hover {
+   cursor: pointer;
+   transform: scale(1.075);
+}

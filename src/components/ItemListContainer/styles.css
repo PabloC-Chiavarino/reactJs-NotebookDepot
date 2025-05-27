@@ -1,0 +1,20 @@
+.products__container {
+   display: flex;
+   justify-content: center;
+   height: inherit;
+}
+
+.products__container--items {
+   display: flex;
+   width: 100dvw;
+   height: 100dvh;
+   justify-content: center;
+   gap: 3rem;
+   margin-top: 18rem;
+   scroll-behavior: smooth;
+}
+
+.products__container--items.has-buttons {
+   width: 52dvw;
+   overflow-x: hidden;
+}

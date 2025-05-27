@@ -1,0 +1,91 @@
+.itemResume__container {
+   display: flex;
+   width: 85%;
+   height: 110px;
+   border-bottom: 1px solid gainsboro;
+   margin: auto;
+   position: relative;
+   top: 15px;
+   font-size: 1rem;
+   left: 16px;
+}
+
+.itemResume__img {
+   width: 110px;
+   height: 110px;
+   position: relative;
+   right: 5rem;
+}
+
+.itemResume__goTo {
+   position: absolute;
+   left: 45px;
+   width: fit-content;
+   text-decoration: none;
+   transition: 0.2s;
+   color: rgb(105, 105, 105);
+   font-weight: unset;
+   font-size: 1.1rem;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   height: 100%;
+}
+
+.itemResume__goTo:hover {
+   color: #46cc6b;
+   cursor: pointer;
+}
+
+.itemResume__subContainer {
+   display: flex;
+   width: 75%;
+   align-items: center;
+   color: black;
+   left: 4.8rem;
+   position: relative;
+   justify-content: space-between;
+}
+
+.itemResume__name,
+.itemResume__price {
+   font-weight: unset;
+}
+
+.itemResume__options--container {
+   display: flex;
+   align-items: center;
+   width: 90px;
+   font-family: "orbitron";
+   font-size: 16px;
+   color: rgb(44, 44, 44);
+   gap: 1rem;
+}
+
+.itemResume__product--minus {
+   transition: 0.2s;
+   width: 23px;
+   margin-left: 1rem;
+}
+
+.itemResume__product--minus:hover {
+   cursor: pointer;
+   transform: rotate(180deg);
+}
+
+.itemResume__quantity {
+   width: 28px;
+   font-size: 14px;
+   font-family: orbitron;
+   font-weight: bold;
+   color: rgb(44, 44, 44);
+}
+
+.itemResume__product--delete {
+   transition: 0.2s;
+}
+
+.itemResume__product--delete:hover {
+   transform: translateY(-2px);
+   cursor: pointer;
+}

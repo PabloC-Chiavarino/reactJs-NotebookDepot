@@ -1,0 +1,45 @@
+.cartContainer {
+  width: 70px;
+  background-color: #131313;
+  height: inherit;
+  right: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartContainer:hover {
+  cursor: pointer;
+}
+
+.cartContainer__count {
+  color: black;
+  font-family: "anton", sans-serif;
+  font-size: 12px;
+  z-index: 1;
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  user-select: none;
+  border-radius: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  left: 40px;
+  text-align: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.cartContainer__img {
+  position: relative;
+  right: 1px;
+  width: 32px;
+  height: 32px;
+}
+
+.cartContainer__img:hover {
+  cursor: pointer;
+}

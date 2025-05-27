@@ -1,0 +1,69 @@
+.card__buttons--container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    position: absolute;
+    bottom: 96px;
+    right: 60px;
+    height: fit-content;
+    width: 240px;
+}
+
+.card__buttons--subContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 30px;
+  }
+
+.card__buttons--minus, .card__buttons--plus {
+    width: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.card__buttons--minus:hover, .card__buttons--plus:hover {
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.card__input {
+    width: 20px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid darkgrey;
+    border-radius: 2px;
+    opacity: 0.8;
+    background: transparent;
+    outline: none;
+    font-family: 'anton', sans-serif;
+    font-size: 1rem;
+    position: absolute;
+    top: -4px;
+
+}
+
+.addBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    font-family: 'wix madefor display', sans-serif;
+    background-color:#cfcfcf;
+    color: black;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.addBtn:hover {
+    cursor: pointer;
+    background-color: rgb(122, 122, 122);
+    color:white;
+    border-color: transparent;
+}

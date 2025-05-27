@@ -1,0 +1,27 @@
+.slideshow__container {
+   position: fixed;
+   width: 100dvw;
+   height: 80dvh;
+   top: 60px;
+}
+
+.slideshow__collection {
+   width: 100%;
+   height: 100%;
+}
+
+.slideshow__img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-position: center;
+   transition: 1100ms ease-in-out;
+}
+
+.visible {
+   opacity: 1;
+}
+
+.hidden {
+   opacity: 0;
+}

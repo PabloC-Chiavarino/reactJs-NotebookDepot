@@ -1,0 +1,8 @@
+.account__container {
+   height: 100dvh;
+   width: 100%;
+   margin-bottom: -100dvh;
+   background-image: url("../../assets/imgs/defaultBackground.svg");
+   background-size: cover;
+   position: absolute;
+}
