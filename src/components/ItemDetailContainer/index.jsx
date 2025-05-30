@@ -9,19 +9,17 @@ import './styles.css'
 const ItemDetailContainer = () => {
   const ref = useRef()
   const { loading, data } = useFirestore('unity')
-  const toView = useScroll(ref, 'element')
+  useScroll(ref, 'element')
 
   return (
-    <>
-      <div className='product__Detailcontainer' ref={ref}>
-        {loading
-          ? <Loader greeting='Cargando' />
-          : (
-            <ItemDetail product={data} onAddPopUp={throwAddPopUp} />
-            )}
-        <ToastContainer />
-      </div>
-    </>
+    <div className='product__Detailcontainer' ref={ref}>
+      {loading
+        ? <Loader greeting='Cargando' />
+        : (
+          <ItemDetail product={data} onAddPopUp={throwAddPopUp} />
+          )}
+      <ToastContainer />
+    </div>
   )
 }
 

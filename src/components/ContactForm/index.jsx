@@ -22,12 +22,14 @@ const ContactForm = () => {
       <form className='contactForm' ref={formRef} onSubmit={sendEmail}>
         <h2 className='contactForm__title'>Necesitás ascesoramiento?</h2>
         <h3 className='contactForm__title'>Dejanos tu consulta y te responderemos a la brevedad !</h3>
-        <label className='contactForm__label'>Nombre</label>
-        <input className='contactForm__input' type='text' name='user_name' required />
-        <label className='contactForm__label'>Email</label>
-        <input className='contactForm__input' type='email' name='user_email' required />
-        <label className='contactForm__label'>Mensaje</label>
-        <textarea className='contactForm__msg' name='message' minLength='20' cols='40' rows='6' placeholder='Tu mensaje aquí' required />
+        <div className='contactForm__form'>
+          <label className='contactForm__label'>Nombre</label>
+          <input className='contactForm__input' type='text' name='user_name' required />
+          <label className='contactForm__label'>Email</label>
+          <input className='contactForm__input' type='email' name='user_email' required />
+          <label className='contactForm__label'>Mensaje</label>
+          <textarea className='contactForm__msg' name='message' minLength='20' cols='40' rows='6' placeholder='Tu mensaje aquí' required />
+        </div>
         <input className='contactForm__submit' type='submit' value='Enviar' />
       </form>
     </div>

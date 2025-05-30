@@ -1,20 +1,20 @@
 .products__container {
    display: flex;
    justify-content: center;
-   height: inherit;
+   height: 100dvh;
 }
 
 .products__container--items {
    display: flex;
    width: 100dvw;
-   height: 100dvh;
    justify-content: center;
    gap: 3rem;
-   margin-top: 18rem;
+   margin-top: 13rem;
    scroll-behavior: smooth;
+   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .products__container--items.has-buttons {
-   width: 52dvw;
+   width: 80dvw;
    overflow-x: hidden;
 }

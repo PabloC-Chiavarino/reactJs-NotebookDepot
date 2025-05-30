@@ -3,6 +3,7 @@
     flex-direction: column;
     height: fit-content;
     position: absolute;
+    align-items: center;
     bottom: 96px;
     right: 60px;
     height: fit-content;
@@ -13,7 +14,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 30px;
+    gap: 70px;
   }
 
 .card__buttons--minus, .card__buttons--plus {
@@ -48,13 +49,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
+    width: 205px;
+    height: 48px;
     text-decoration: none;
     border: none;
-    width: 100%;
     font-family: 'wix madefor display', sans-serif;
-    background-color:#cfcfcf;
-    color: black;
+    background-color: #404040;
+    color: whitesmoke;
     transition: 0.3s;
     letter-spacing: 1px;
     font-size: 14px;
@@ -63,7 +64,7 @@
 
 .addBtn:hover {
     cursor: pointer;
-    background-color: rgb(122, 122, 122);
-    color:white;
+    background-color: whitesmoke;
+    color:#404040;
     border-color: transparent;
 }

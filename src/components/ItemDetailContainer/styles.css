@@ -6,7 +6,7 @@
    justify-content: center;
    align-items: center;
    user-select: none;
-   background-color: whitesmoke;
+   background-color: #dcdcdc;
    background-image: url("../../assets/imgs/defaultBackground.svg");
    background-size: cover;
    position: relative;

@@ -13,9 +13,9 @@ const ItemDetail = ({ product, onAddPopUp }) => {
   }
 
   return (
-    <>
-      <div className='detail__container'>
-        <img className='detail__img' src={img} alt='TEST' />
+    <div className='detail__container'>
+      <img className='detail__img' src={img} alt='TEST' />
+      <div className='detail__container--info'>
         <h2 className='detail__name'>{name}</h2>
         <div className='detail__description--container'>
           <p className='detail__description'>{detail}</p>
@@ -26,12 +26,12 @@ const ItemDetail = ({ product, onAddPopUp }) => {
         <div className='detail__stock--container'>
           <p className='detail__stock'>{stock} in stock</p>
         </div>
-        <ItemCount avaiableStock={stock} onAdd={handleOnAdd} />
-        <div className='detail__mainBtn--container'>
-          <MainBtn text='Volver' />
-        </div>
       </div>
-    </>
+      <ItemCount avaiableStock={stock} onAdd={handleOnAdd} />
+      <div className='detail__mainBtn--container'>
+        <MainBtn text='Volver' />
+      </div>
+    </div>
   )
 }
 

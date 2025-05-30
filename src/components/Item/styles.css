@@ -12,7 +12,7 @@
    box-shadow: 1px 1px 3px rgb(46, 46, 46);
    transition: 0.25s ease;
    position: relative;
-   background-color: #eaeaea;
+   background-color: #dcdcdc;
 }
 
 .card:hover {
@@ -51,6 +51,7 @@
    font-size: 14px;
    color: rgb(40, 40, 40);
    letter-spacing: 0.5px;
+   text-shadow: 0px 0px 1px black
 }
 
 .card__price--container {

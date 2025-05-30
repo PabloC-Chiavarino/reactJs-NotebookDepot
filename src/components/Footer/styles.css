@@ -9,7 +9,7 @@
    flex-direction: column;
    position: relative;
    user-select: none;
-   top: 100dvh;
+   top: 90dvh;
 }
 
 .footer__subcontainer {

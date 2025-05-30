@@ -1,81 +1,91 @@
 .userSignIn__container {
-   width: 100dvw;
-   height: calc(100dvh - 60px);
-   display: flex;
-   flex-direction: column;
-   position: relative;
-   align-items: center;
-   background-image: url("../../assets/imgs/defaultBackground.svg");
-   background-size: cover;
-   background-repeat: no-repeat;
-   padding-top: 7rem;
-   margin-bottom: -100dvh;
-   animation: fadeIn 0.5s ease-in-out forwards;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  background-image: url("../../assets/imgs/defaultBackground.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 7rem;
+  margin-bottom: -100dvh;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.userSignIn__container h1 {
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 2.7rem;
 }
 
 .userSignIn__form-container {
-   display: flex;
-   width: 280px;
-   flex-direction: column;
-   align-items: center;
-   position: relative;
-   top: 1.4rem;
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 4rem;
+}
+
+.userSignIn__form-container label {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .userSignIn__input {
-   width: 100%;
-   margin-top: 1rem;
-   margin-bottom: 2rem;
-   height: 1.3rem;
-   border-radius: 2px;
-   background-color: whitesmoke;
-   font-size: 1rem;
-   box-shadow: 1px 1px 2px 1px #848484;
-   border: none;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 1.3rem;
+  border-radius: 2px;
+  background-color: whitesmoke;
+  font-size: 1rem;
+  box-shadow: 1px 1px 2px 1px #848484;
+  border: none;
 }
 
 .userSignIn__options-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 .userSignIn__button {
-   display: flex;
-   margin-top: 2rem;
-   justify-content: center;
-   align-items: center;
-   height: 44px;
-   text-decoration: none;
-   width: 70%;
-   font-family: "wix madefor display", sans-serif;
-   color: #292929;
-   border: 1px solid;
-   border-radius: 2px;
-   transition: 0.3s;
-   letter-spacing: 1px;
-   font-size: 14px;
-   position: relative;
-   background-color: transparent;
-   &:hover {
-      cursor: pointer;
-      background-color: rgb(122, 122, 122);
-      color: white;
-      border-color: transparent;
-   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 205px;
+  height: 48px;
+  text-decoration: none;
+  font-family: "wix madefor display", sans-serif;
+  background-color: #803cb7b0;
+  color: whitesmoke;
+  border: none;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  font-size: 14px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: #803cb7b0;
+    border-color: transparent;
+  }
 }
 
 .userSignIn__accountSet {
-   color: rgb(19, 19, 232);
-
-   &:hover {
-      cursor: pointer;
-   }
+  color: rgb(19, 19, 232);
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .userSignIn__options-subcontainer {
-   display: flex;
-   align-items: center;
-   gap: 5px;
-   margin-top: -5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: -5px;
 }

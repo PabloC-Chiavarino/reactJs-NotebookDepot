@@ -1,21 +1,20 @@
 .mainBtn {
-   height: 45px;
-   text-decoration: none;
    width: 205px;
+   height: 48px;
+   text-decoration: none;
    font-family: "wix madefor display", sans-serif;
-   color: #292929;
-   border: 1px solid;
-   border-radius: 2px;
+   color: whitesmoke;
+   background-color: #803cb7b0;
+   border: none;
    transition: 0.3s;
    letter-spacing: 1px;
    font-size: 14px;
    position: relative;
-   background-color: transparent;
 }
 
 .mainBtn:hover {
    cursor: pointer;
-   background-color: rgb(122, 122, 122);
-   color: white;
+   background-color: whitesmoke;
+   color: #803cb7b0;
    border-color: transparent;
 }

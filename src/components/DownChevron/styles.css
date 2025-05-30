@@ -15,18 +15,13 @@
   display: flex;
   justify-content: center;
   opacity: 0;
-  animation: fadeIn 1150ms ease 1150ms forwards !important;
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   z-index: 1;
 }
 
 .downChevron {
-  width: 100px;
+  width: 120px;
   opacity: 0.8;
   animation: upDownBounce 3000ms ease-in-out 500ms infinite;
-}
-
-.fadeOut {
-  animation: fadeOut 300ms ease !important;
 }

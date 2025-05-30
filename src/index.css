@@ -21,6 +21,14 @@
    
 }
 
+.fadeIn {
+  animation: fadeIn 1150ms ease 1150ms forwards !important;
+}
+
+.fadeOut {
+  animation: fadeOut 300ms ease !important;
+}
+
 body {
    margin: auto;
    background-color: black;

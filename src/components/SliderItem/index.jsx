@@ -10,12 +10,12 @@ const SliderItem = ({ product }) => {
   return (
     <div className='slider__item--container'>
       <img className='slider__item--img' src={img} alt='IMG_HERE' />
-      <div>
+      <div className='slider__item--info'>
         <h4 className='slider__item--name'>{name}</h4>
         <h6 className='slider__item--price'>$ {price * quantity}</h6>
-        <h6 className='slider__item--quantity'>x{quantity}</h6>
       </div>
       <div className='slider__item--options'>
+        <h6 className='slider__item--quantity'>x{quantity}</h6>
         <img
           onClick={() => cartProductDeduct(product)}
           style={{ display: quantity > 1 ? 'block' : 'none' }}

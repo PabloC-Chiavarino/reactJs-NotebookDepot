@@ -1,91 +1,111 @@
 .slider__container {
-   width: 25%;
-   height: 100%;
-   padding: 2rem;
-   display: flex;
-   flex-direction: column;
-   position: fixed;
-   right: 0;
-   background-color: ghostwhite;
-   font-family: "wix madefor display", sans-serif;
-   background-color: #dcdcdc;
-   transition: 0.2s ease-in-out;
-   user-select: none;
-   z-index: 4 !important;
+  width: 25%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  background-color: ghostwhite;
+  font-family: "wix madefor display", sans-serif;
+  background-color: #dcdcdc;
+  transition: 0.2s ease-in-out;
+  user-select: none;
+  z-index: 4 !important;
 }
 
 .slider__closeButton {
-   position: absolute;
-   top: 1rem;
-   color: black;
-   transition: 0.2s ease-out;
-   font-size: 18px;
+  position: absolute;
+  top: 1rem;
+  color: black;
+  transition: 0.2s ease-out;
+  font-size: 18px;
 }
 
 .slider__closeButton:hover {
-   cursor: pointer;
-   color: #484848;
+  cursor: pointer;
+  color: #484848;
 }
 
 .slider__title {
-   border-bottom: 1px solid black;
-   padding-bottom: 1rem;
-   color: #484848;
-   width: 100%;
-   font-size: 26px;
+  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  color: #484848;
+  width: 100%;
+  font-size: 1.7rem;
 }
 
 .slider__empty {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-weight: unset;
-   position: relative;
-   top: 7rem;
-   font-size: 21px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+  font-weight: lighter;
+  position: relative;
+  font-size: 1.5rem;
 }
 
 .slider__listContainer {
-   height: 50%;
-   overflow-y: auto;
-   overflow-x: hidden;
-   color: #2d2d2d;
-   display: flex;
-   flex-direction: column;
-   gap: 14px;
+  height: fit-content;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #2d2d2d;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 2rem;
+}
+
+.total__container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  right: 33px;
+  position: absolute;
+  top: 21px;
+  gap: 1rem;
+}
+
+.total__container h3 {
+  color: #484848;
+  font-size: 1.5rem;
+}
+
+.total__price {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: rgb(116, 159, 125);
 }
 
 .slider__checkoutBtn--container {
-   height: 50px;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   position: absolute;
-   bottom: 90px;
-   right: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 6rem;
 }
 
 .slider__checkoutBtn {
-   display: flex;
-   width: 205px;
-   align-items: center;
-   justify-content: center;
-   height: 44px;
-   text-decoration: none;
-   border: none;
-   border-radius: 2px;
-   color: #292929;
-   transition: 0.3s;
-   letter-spacing: 0.7px;
-   font-size: 15px;
-   border: 1px solid black;
-   position: relative;
-   bottom: 1rem;
+  display: flex;
+  width: 205px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  background-color: #803cb7b0;
+  color: whitesmoke;
+  transition: 0.3s;
+  letter-spacing: 0.7px;
+  font-size: 15px;
+  border: none;
+  position: relative;
 }
 
 .slider__checkoutBtn:hover {
-   cursor: pointer;
-   background-color: rgb(122, 122, 122);
-   color: white;
-   border-color: transparent;
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #803cb7b0;
+  border-color: transparent;
 }

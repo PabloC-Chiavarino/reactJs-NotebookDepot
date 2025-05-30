@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { useRef } from 'react'
+import { useScroll } from '../../hooks'
 import useFirestore from '../../hooks/useFirestore'
 import './styles.css'
 
@@ -6,14 +8,17 @@ const UserSignIn = () => {
   const accounts = useFirestore('users')
   console.log(accounts) // debuggin
 
+  const formRef = useRef()
+  useScroll(formRef, 'element')
+
   return (
     <div
       className='userSignIn__container'
     >
       <div>
-        <h1 style={{ letterSpacing: '1px', fontWeight: '500' }}>Hola !</h1>
+        <h1>Hola !</h1>
       </div>
-      <div className='userSignIn__form-container'>
+      <form ref={formRef} className='userSignIn__form-container'>
         <label>Ingresar correo electrónico</label>
         <input
           className='userSignIn__input'
@@ -26,7 +31,7 @@ const UserSignIn = () => {
           type='password'
           name='password'
         />
-      </div>
+      </form>
       <div className='userSignIn__options-container'>
         <button className='userSignIn__button'>Iniciar Sesión</button>
         <div className='userSignIn__options-subcontainer'>

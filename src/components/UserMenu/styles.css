@@ -9,7 +9,7 @@
    right: 0;
    transform: translate(100%);
    transition: 0.2s ease-in-out;
-   z-index: 1;
+   z-index: 2;
 }
 
 .userMenu__close {
@@ -63,23 +63,23 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 44px;
+   width: 205px;
+   height: 48px;
    text-decoration: none;
-   width: 50%;
    font-family: "wix madefor display", sans-serif;
    color: #292929;
-   border: 1px solid;
-   border-radius: 2px;
+   border: none;
    transition: 0.3s;
    letter-spacing: 1px;
    font-size: 14px;
    position: relative;
    z-index: 1;
-   background-color: transparent;
+   background-color: #803cb7b0;
+   color: whitesmoke;
    &:hover {
       cursor: pointer;
-      background-color: rgb(122, 122, 122);
-      color: white;
+      background-color: whitesmoke;
+      color: #803cb7b0;
       border-color: transparent;
    }
 }

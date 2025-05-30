@@ -4,13 +4,22 @@
   background-color: white;
   width: 95%;
   max-width: 80rem;
-  font-family: 'wix madefor display', sans-serif;
+  font-family: "wix madefor display", sans-serif;
   font-size: 15px;
   box-shadow: 1px 1px 3px rgb(46, 46, 46);
   transition: 0.25s;
   height: 28rem;
-  background-color: whitesmoke;
+  background-color: #eaeaea;
   border-radius: 4px;
+}
+
+.detail__container--info {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  right: 60px;
+  display: flex;
+  justify-content: start;
 }
 
 .detail__img {
@@ -22,7 +31,6 @@
 
 .detail__description--container {
   width: 500px;
-  right: 175px;
   height: 250px;
   top: 100px;
   position: absolute;
@@ -37,7 +45,6 @@
   color: rgb(50, 50, 50);
   font-weight: unset;
   top: 0;
-  right: 18rem;
   letter-spacing: 1px;
   position: absolute;
 }
@@ -45,8 +52,7 @@
 .detail__price--container {
   display: flex;
   position: absolute;
-  top: 205px;
-  left: 10.75rem;
+  top: 210px;
   width: fit-content;
   justify-content: center;
   height: fit-content;
@@ -63,14 +69,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  bottom: 1rem;
+  position: absolute;
+  bottom: 2rem;
 }
 
 .detail__stock--container {
   position: absolute;
   top: 280px;
   height: fit-content;
-  left: 5px;
 }
 
 .detail__stock {

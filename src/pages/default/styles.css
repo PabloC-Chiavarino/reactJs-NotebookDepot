@@ -1,7 +1,7 @@
 .productsSection {
-   height: 100dvh;
+   height: 90dvh;
    box-shadow: 0px -1.5px 5px 1px #131313;
    background-color: #242424;
    position: relative;
-   top: 86dvh;
+   top: 90dvh;
 }

@@ -30,24 +30,23 @@
    width: 100%;
    z-index: 2;
    justify-content: center;
-   align-self: center;
    position: relative;
-   bottom: 3rem;
+   align-self: center;
+   color: whitesmoke;
 }
 
 .loader__container--ellipsis {
-   width: 67px;
-   height: 13px;
+   width: 70px;
    position: absolute;
-   top: 2.2rem;
+   top: 1.5rem;
 }
 
 .loader__container--ellipsis div {
    border-radius: 50%;
-   background-color: #595959;
+   background-color: #803cb7b0;
    position: absolute;
-   width: 13px;
-   height: 13px;
+   width: 1rem;
+   height: 1rem;
    animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -77,5 +76,5 @@
    letter-spacing: 1px;
    font-weight: unset;
    font-size: 1.4rem;
-   top: 4.5rem;
+   margin-top: 3rem;
 }
