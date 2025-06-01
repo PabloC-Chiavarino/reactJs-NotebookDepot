@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { addDoc } from 'firebase/firestore'
 import { mailConfirmErr } from '../../constants/utils'
-import { useFirestore, useCartContext } from '../../hooks'
+import { useFirestore, useCartContext, useScroll } from '../../hooks'
 import { MainBtn, BuyFormModal, OpacityDiv, CartList } from '../../components'
-import { binBig, confirmImg } from '../../assets/icons'
+import { binBig } from '../../assets/icons'
 import './styles.css'
 
 const Cart = () => {
@@ -12,6 +12,9 @@ const Cart = () => {
   const [orderSent, setOrderSent] = useState(null)
   const { cartProducts, cartTotalProducts, cartEraseAll, cartTotalPrice } = useCartContext()
   const { data: orders } = useFirestore('orders')
+
+  const ref = useRef()
+  useScroll(ref, 'element')
 
   const handleOnClick = () => setFormShow(!formShow)
 
@@ -53,7 +56,8 @@ const Cart = () => {
   }
 
   return (
-    <div className='cart__container'>
+    <div ref={ref} className='cart__container'>
+      <OpacityDiv show={formShow} handleOnClick={handleOnClick} />
       {orderSent != null
         ? (
           <div className='cart__orderInfo--container'>
@@ -92,31 +96,32 @@ const Cart = () => {
                   <div className='cart__list--container'>
                     <CartList />
                   </div>
-                  <OpacityDiv show={formShow} handleOnClick={handleOnClick} />
-                  <BuyFormModal
-                    data={formData}
-                    show={formShow}
-                    handleOnClick={handleOnClick}
-                    handleOnChange={handleFormData}
-                    handleSubmit={handleOrderSubmit}
-                  />
-                  <div className='cart__total--container'>
-                    <h3>Cant. productos: {cartTotalProducts()}</h3>
-                    <h3>Total carrito: {cartTotalPrice()}</h3>
-                    <h3>Envío: {cartTotalProducts() >= 2 ? 'Gratis !' : '$ 2500'}</h3>
-                    <h2>Total: $ {cartTotalPrice() + 2500}</h2>
-                    <div className='cart__confirm--container'>
-                      <img onClick={handleOnClick} className='cart__confirm' src={confirmImg} alt='confirm cart' />
-                    </div>
-                  </div>
                 </>
                 )}
           </div>
           )}
+      <div className='cart__total--container'>
+        <h3>Cant. productos: {cartTotalProducts()}</h3>
+        <h3>Subtotal: {cartTotalPrice()}</h3>
+        <h3>Envío: {cartTotalProducts() >= 2 ? 'Gratis !' : '$' + 10000}</h3>
+        <h2>Total: $ {cartTotalPrice()}</h2>
+      </div>
+      <div className='cart__checkoutBtn--container'>
+        <button onClick={handleOnClick} className='cart__checkoutBtn' alt='Checkout'>
+          Checkout
+        </button>
+      </div>
       <div className='navigate__options--container'>
         <MainBtn type='default' text='Ver más productos' />
         <MainBtn type='back' text='Volver' />
       </div>
+      <BuyFormModal
+        data={formData}
+        show={formShow}
+        handleOnClick={handleOnClick}
+        handleOnChange={handleFormData}
+        handleSubmit={handleOrderSubmit}
+      />
     </div>
   )
 }

@@ -28,8 +28,8 @@ const Slider = ({ show, onClose }) => {
             <h3>Total:</h3>
             <h4 className='total__price'> ${cartTotalPrice()}</h4>
           </div>
-          <div className='slider__checkoutBtn--container'>
-            <Link to='/cart' onClick={onClose} className='slider__checkoutBtn'>
+          <div className='slider__goToCartBtn--container'>
+            <Link to='/cart' onClick={onClose} className='slider__goToCartBtn'>
               Ir al carrito
             </Link>
           </div>

@@ -1,91 +1,95 @@
 .itemResume__container {
-   display: flex;
-   width: 85%;
-   height: 110px;
-   border-bottom: 1px solid gainsboro;
-   margin: auto;
-   position: relative;
-   top: 15px;
-   font-size: 1rem;
-   left: 16px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 120px;
+  border-bottom: 1px solid gainsboro;
+  margin: auto;
+  font-size: 1rem;
 }
 
 .itemResume__img {
-   width: 110px;
-   height: 110px;
-   position: relative;
-   right: 5rem;
+  width: 110px;
+  height: 110px;
 }
 
 .itemResume__goTo {
-   position: absolute;
-   left: 45px;
-   width: fit-content;
-   text-decoration: none;
-   transition: 0.2s;
-   color: rgb(105, 105, 105);
-   font-weight: unset;
-   font-size: 1.1rem;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   height: 100%;
+  text-decoration: none;
+  transition: 0.2s;
+  color: rgb(105, 105, 105);
+  font-weight: unset;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 1rem;
 }
 
 .itemResume__goTo:hover {
-   color: #46cc6b;
-   cursor: pointer;
+  color: #803cb7b0;
+  cursor: pointer;
 }
 
 .itemResume__subContainer {
-   display: flex;
-   width: 75%;
-   align-items: center;
-   color: black;
-   left: 4.8rem;
-   position: relative;
-   justify-content: space-between;
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: rgb(48, 48, 48);
+  margin-left: 5rem;
 }
 
-.itemResume__name,
+.itemResume__name {
+  font-weight: normal;
+  min-width: 250px;
+}
+
 .itemResume__price {
-   font-weight: unset;
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-width: 7rem;
 }
 
-.itemResume__options--container {
-   display: flex;
-   align-items: center;
-   width: 90px;
-   font-family: "orbitron";
-   font-size: 16px;
-   color: rgb(44, 44, 44);
-   gap: 1rem;
+.itemResume__quantity--container {
+  display: flex;
+  font-family: "orbitron";
+  color: rgb(44, 44, 44);
+  min-width: 8rem;
+  margin-right: 2rem;
 }
 
-.itemResume__product--minus {
-   transition: 0.2s;
-   width: 23px;
-   margin-left: 1rem;
+.itemResume__options {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
 }
 
-.itemResume__product--minus:hover {
-   cursor: pointer;
-   transform: rotate(180deg);
+.itemResume__options--minus {
+  transition: all 0.2s ease-in-out;
+  transform: scale(.7);
+}
+
+.itemResume__options--minus:hover {
+  cursor: pointer;
+  transform: rotate(180deg) scale(.8);
 }
 
 .itemResume__quantity {
-   width: 28px;
-   font-size: 14px;
-   font-family: orbitron;
-   font-weight: bold;
-   color: rgb(44, 44, 44);
+  width: 28px;
+  font-family: orbitron;
+  font-weight: bold;
+  color: rgb(44, 44, 44);
+  margin-right: 2rem;
 }
 
-.itemResume__product--delete {
-   transition: 0.2s;
+.itemResume__options--delete {
+  transition: 0.1s ease-in-out;
+  transform: scale(.5);
 }
 
-.itemResume__product--delete:hover {
-   transform: translateY(-2px);
-   cursor: pointer;
+.itemResume__options--delete:hover {
+  cursor: pointer;
+  transform: scale(.6);
 }

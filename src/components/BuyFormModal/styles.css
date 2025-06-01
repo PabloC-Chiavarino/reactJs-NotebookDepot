@@ -1,14 +1,14 @@
 .buyformModal__container {
-  width: 100%;
+  width: 98%;
+  height: 60%;
   background-color: #282828;
-  height: 24rem;
-  transition: 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   color: rgb(189, 189, 189);
   position: fixed;
+  align-content: center;
   font-weight: unset;
   letter-spacing: 1px;
   z-index: 3;
-  bottom: 0;
 }
 
 .buyFormModal__sliderDown {
@@ -27,42 +27,38 @@
 }
 
 .buyForm__title {
-  position: relative;
+  position: absolute;
   margin: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   top: 7px;
   font-weight: unset;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .buyForm {
-  display: flex;
-  margin: auto;
-  position: relative;
-  top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 30%);
+  width: 100%;
+  align-items: center;
   justify-content: center;
-  width: 95%;
-  ;
 }
 
-.buyForm__grid {
-  display: grid;
-  grid-template-columns: 45% 45%;
-  column-gap: 90px;
-  padding: 1rem;
+.buyFormModal__userData {
+  display: flex;
+  width: 50%;
 }
 
 input {
   padding: 6px;
-  width: 100%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 80%;
 }
 
 .buyForm__submit--container {
-  width: 96%;
+  width: 100%;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -71,21 +67,25 @@ input {
 }
 
 .buyForm__submit {
-  height: 45px;
-  width: 250px;
-  font-family: wix madefor display;
-  font-weight: bold;
-  background-color: black;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 48px;
+  text-decoration: none;
   border: none;
-  transition: 0.2s;
-  font-size: 14px;
+  font-family: "wix madefor display", sans-serif;
+  background-color: black;
+  color: whitesmoke;
+  transition: 0.3s;
   letter-spacing: 1px;
-  font-weight: bold;
+  font-size: 14px;
+  margin-top: 30px;
 }
 
 .buyForm__submit:hover {
-  background-color: #acacac;
-  color: black;
   cursor: pointer;
+  background-color: whitesmoke;
+  color: black;
+  border-color: transparent;
 }

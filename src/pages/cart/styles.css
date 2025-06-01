@@ -1,180 +1,197 @@
 .cart__container {
-   display: flex;
-   flex-direction: column;
-   height: 100dvh;
-   width: 100%;
-   justify-content: center;
-   align-items: center;
-   background-image: url("../../assets/imgs/defaultBackground.svg");
-   background-size: cover;
-   user-select: none;
-   letter-spacing: 1px;
-   background-color: whitesmoke;
-   position: absolute;
-   margin-bottom: -100dvh;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/imgs/defaultBackground.svg");
+  background-size: cover;
+  user-select: none;
+  letter-spacing: 1px;
+  background-color: whitesmoke;
+  position: absolute;
+  margin-bottom: -100dvh;
+}
+
+.cartProducts__container {
+  height: 40%;
+  width: 70%;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  margin-top: -3rem;
 }
 
 .cart__title--container {
-   width: 30%;
-   position: absolute;
-   top: 90px;
-   display: flex;
-   justify-content: end;
-   border-bottom: 2px solid black;
-   right: 0;
-   animation: fadeIn 0.5s ease-in-out forwards;
+  width: 30%;
+  position: absolute;
+  top: 90px;
+  display: flex;
+  justify-content: end;
+  border-bottom: 2px solid black;
+  right: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .cart__title {
-   font-size: 30px;
-   justify-content: center;
-   display: flex;
-   position: relative;
-   top: 10px;
-   right: 2rem;
+  font-size: 30px;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: 10px;
+  right: 2rem;
 }
 
 .cart__orderInfo--container {
-   animation: fadeIn 0.5s ease-in-out forwards;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .cart__orderInfo--subcontainer {
-   width: 56%;
-   background-color: #292929;
-   color: rgb(207, 207, 207);
-   border: 1px solid darkgray;
-   border-radius: 7rem;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   animation: fadeIn 0.5s ease-in-out forwards;
+  width: 56%;
+  background-color: #292929;
+  color: rgb(207, 207, 207);
+  border: 1px solid darkgray;
+  border-radius: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .cart__orderInfo--details {
-   display: flex;
-   flex-direction: column;
-   line-height: 0px;
-   margin-top: 1rem;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 0px;
+  margin-top: 1rem;
+  align-items: center;
 }
 
 .cart__orderInfo--details h5 {
-   padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .cart__orderInfo--ID {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .cart__list--container {
-   font-size: 1rem;
-   height: 63%;
-   width: 65%;
-   position: absolute;
-   left: 30px;
-   bottom: 126px;
-   overflow-y: auto;
-   font-weight: lighter;
-   letter-spacing: 0.5px;
-   z-index: 1;
-   overflow-x: hidden;
-   scrollbar-color: rgb(145, 145, 145) #cccccc;
-   animation: fadeIn 0.5s ease-in-out forwards;
+  font-size: 1rem;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+  z-index: 1;
+  overflow-x: hidden;
+  scrollbar-color: rgb(145, 145, 145) #cccccc;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .cart__empty {
-   position: relative;
-   font-size: 22px;
-   letter-spacing: 1px;
-   font-weight: lighter;
-   animation: fadeIn 0.5s ease-in-out forwards;
+  position: relative;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .cart__total--container {
-   position: absolute;
-   top: 200px;
-   color: rgb(0, 0, 0);
-   font-size: 12px;
-   right: 5rem;
-   height: 20rem;
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   width: 250px;
+  color: #404040;
+  align-items: center;
+  position: relative;
+  top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  font-size: 1rem;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-.cart__confirm--container {
-   display: flex;
-   width: fit-content;
-   font-size: 12px;
-   position: absolute;
-   bottom: 0;
-   right: 0;
-   z-index: 1;
-   color: whitesmoke;
-   gap: 20px;
+.cart__total--container h2 {
+  font-size: 1.6rem;
+  color: #025e02;
 }
 
-.cart__confirm--container:hover {
-   color: black;
+.cart__checkoutBtn--container {
+  position: absolute;
+  bottom: 9rem;
+  right: 9rem;
 }
 
-.cart__confirm {
-   width: 64px;
-   transition: 0.2s;
+.cart__checkoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 48px;
+  text-decoration: none;
+  border: none;
+  font-family: "wix madefor display", sans-serif;
+  background-color: #404040;
+  color: whitesmoke;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-top: 30px;
 }
 
-.cart__confirm:hover {
-   cursor: pointer;
-   transform: translateY(-5px);
-   color: black;
+.cart__checkoutBtn:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #404040;
+  border-color: transparent;
 }
 
 .cart__erase--container {
-   display: flex;
-   align-items: center;
-   font-size: 12px;
-   position: absolute;
-   z-index: 1;
-   color: #ec3939;
-   top: 13rem;
-   gap: 1rem;
-   width: fit-content;
-   right: 1.5rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  font-size: 14px;
+  z-index: 1;
+  color: #803cb7b0;
+  right: 1.25rem;
+  top: 11.7rem;
+  &::before {
+    transition: opacity 0.2s ease-in-out;
+    content: "Vaciar carrito";
+    opacity: 0;
+  }
 }
 
 .cart__erase--container:hover {
-   color: black;
+  &::before {
+    opacity: 1;
+  }
 }
 
 .cart__erase {
-   transition: 0.2s;
-   width: 48px;
+  transition: transform 0.2s ease-in-out;
+  width: 65px;
 }
 
 .cart__erase:hover {
-   cursor: pointer;
-   transform: translateY(-5px);
-   color: black;
+  cursor: pointer;
+  transform: translateY(-5px);
+  color: black;
 }
 
 .navigate__options--container {
-   display: flex;
-   position: absolute;
-   bottom: 30px;
-   letter-spacing: 1px;
-   justify-content: center;
-   gap: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 9rem;
+  letter-spacing: 1px;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .swal2-container {
-   font-family: "wix madefor display", sans-serif;
-   letter-spacing: 1px;
+  font-family: "wix madefor display", sans-serif;
+  letter-spacing: 1px;
 }
 
 .swal2-icon.swal2-warning {
-   border-color: #ffa354;
-   color: #ffa354;
+  border-color: #ffa354;
+  color: #ffa354;
 }

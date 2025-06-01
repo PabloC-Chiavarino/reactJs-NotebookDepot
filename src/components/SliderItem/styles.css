@@ -8,6 +8,11 @@
   font-weight: bold;
   letter-spacing: 1px;
   position: relative;
+  transition: background-color .2s ease-in;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(192, 192, 192);
+  }
 }
 
 .slider__item--img {
@@ -27,13 +32,15 @@
 }
 
 .slider__item--name {
-  font-size: 16px;
+  font-size: 15px;
+  color: #2d2d2d;
   width: 100%;
   margin: 0;
+  font-weight: lighter;
 }
 
 .slider__item--price {
-  font-size: 15px;
+  font-size: 14px;
   color: #484848;
   margin: 0;
 }
@@ -41,26 +48,28 @@
 .slider__item--quantity {
   color: #484848;
   position: relative;
-  font-size: 14px;
-  margin: 0.5rem 0.25rem 0 0;
+  font-size: 15px;
+  margin: 0.5rem 0.75rem 0 0;
 }
 
 .slider__item--options {
-  display: flex;
-  position: sticky;
-  right: 24px;
-  margin-top: 50px;
+  min-width: 82px;
   height: fit-content;
-  gap: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  align-items: center;
+  right: 5px;
+  margin-top: 50px;
 }
 
 .slider__item--minus {
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   border-radius: 50%;
   background-color: #c4cada91;
-  transition: 0.25s;
+  transition: all 0.25s ease-in-out;
 }
 
 .slider__item--minus:hover {
@@ -69,12 +78,11 @@
 }
 
 .slider__item--delete {
-  transition: 0.2s;
-  width: 24px;
-  height: 24px;
+  transition: all 0.2s ease-in-out;
+  transform: scale(.55);
 }
 
 .slider__item--delete:hover {
   cursor: pointer;
-  transform: scale(1.075);
+  transform: scale(.65);
 }

@@ -1,17 +1,17 @@
 .slider__container {
-  width: 25%;
-  height: 100%;
+  width: 23%;
+  height: 86%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   position: fixed;
+  top: 62px;
   right: 0;
   background-color: ghostwhite;
   font-family: "wix madefor display", sans-serif;
   background-color: #dcdcdc;
   transition: 0.2s ease-in-out;
   user-select: none;
-  z-index: 4 !important;
 }
 
 .slider__closeButton {
@@ -46,6 +46,7 @@
 
 .slider__listContainer {
   height: fit-content;
+  max-height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   color: #2d2d2d;
@@ -77,7 +78,7 @@
   color: rgb(116, 159, 125);
 }
 
-.slider__checkoutBtn--container {
+.slider__goToCartBtn--container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -85,7 +86,7 @@
   top: 6rem;
 }
 
-.slider__checkoutBtn {
+.slider__goToCartBtn {
   display: flex;
   width: 205px;
   height: 48px;
@@ -103,7 +104,7 @@
   position: relative;
 }
 
-.slider__checkoutBtn:hover {
+.slider__goToCartBtn:hover {
   cursor: pointer;
   background-color: whitesmoke;
   color: #803cb7b0;
