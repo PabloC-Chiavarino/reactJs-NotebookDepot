@@ -4,7 +4,7 @@ const BuyFormModal = ({ data, show, handleOnClick, handleOnChange, handleSubmit 
   return (
     <div
       className='buyformModal__container'
-      style={{ transform: show ? 'translateY(0)' : 'translateY(128%)' }}
+      style={{ transform: show ? 'translateY(0)' : 'translateY(135%)' }}
     >
       <div
         onClick={handleOnClick}

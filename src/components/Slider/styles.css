@@ -19,7 +19,8 @@
   top: 1rem;
   color: black;
   transition: 0.2s ease-out;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .slider__closeButton:hover {
@@ -41,7 +42,7 @@
   margin-top: 50%;
   font-weight: lighter;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 .slider__listContainer {
