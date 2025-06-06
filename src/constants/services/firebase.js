@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
 
 const firebaseCredentials = {
   apiKey: 'AIzaSyBcvSW-hvmp2WvloJzUds22E5tvMbK6K_E',
@@ -18,11 +18,9 @@ const initFirebase = () => fbApp
 
 const dataBase = getFirestore()
 const auth = getAuth(fbApp)
-const createUser = createUserWithEmailAndPassword
 
 export {
   initFirebase,
-  createUser,
   dataBase,
   auth
 }
