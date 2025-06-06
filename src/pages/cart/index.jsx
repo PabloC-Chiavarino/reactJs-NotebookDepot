@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react'
+import { Elements } from '@stripe/react-stripe-js'
+import { stripePromise } from '../../constants/services/stripe'
 import { addDoc } from 'firebase/firestore'
 import { mailConfirmErr } from '../../constants/utils'
 import { useFirestore, useCartContext, useScroll } from '../../hooks'
@@ -10,6 +12,7 @@ const Cart = () => {
   const [formShow, setFormShow] = useState(false)
   const [formData, setFormData] = useState({})
   const [orderSent, setOrderSent] = useState(null)
+  const [buyInfo, setBuyInfo] = useState({})
   const { cartProducts, cartTotalProducts, cartEraseAll, cartTotalPrice } = useCartContext()
   const { data: orders } = useFirestore('orders')
 
@@ -27,31 +30,37 @@ const Cart = () => {
     )
   }
 
-  const handleOrderSubmit = (event) => {
-    event.preventDefault()
-
+  const handleOrderSubmit = async (paymentInfo) => {
     if (formData.email !== formData.emailOk) {
       mailConfirmErr()
-    } else {
-      const order = {
-        buyer: {
-          name: formData.name,
-          lastName: formData.lastName,
-          contact: formData.phone,
-          address: formData.address,
-          email: formData.email
-        },
-        products: cartProducts.map(({ id, name, quantity, price }) => (
-          { id, name, quantity, price }
-        )),
-        total: cartTotalPrice()
-      }
-      addDoc(orders, order)
-        .then(response => setOrderSent(response.id))
-        .catch(err => console.log(err))
-        .finally(() =>
-          cartEraseAll()
-        )
+      return
+    }
+
+    const order = {
+      data: {
+        name: formData.name,
+        lastName: formData.lastName,
+        phone: formData.phone,
+        address: formData.address,
+        email: formData.email,
+        payMethod: paymentInfo
+      },
+      products: cartProducts.map(({ id, name, quantity, price }) => (
+        { id, name, quantity, price }
+      )),
+      paymentInfo,
+      total: cartTotalPrice()
+    }
+
+    try {
+      const doc = await addDoc(orders, order)
+      setOrderSent(doc.id)
+      setBuyInfo(order.data)
+      cartEraseAll()
+      setFormData({})
+      setFormShow(false)
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -61,21 +70,35 @@ const Cart = () => {
       {orderSent != null
         ? (
           <div className='cart__orderInfo--container'>
-            <div className='cart__orderInfo--subcontainer'>
-              <h1 style={{ fontSize: '1.4rem', color: 'white' }}>Muchas gracias por su compra !</h1>
-              <div className='cart__orderInfo--ID'>
-                <h3>Orden de compra:</h3>
-                <div style={{ color: 'red' }}>
-                  {orderSent}
-                </div>
+            <h2 style={{ fontSize: '1.3rem', color: 'black' }}>Muchas gracias por su compra !</h2>
+            <div className='cart__orderInfo--ID'>
+              <h3>Orden de compra:</h3>
+              <div style={{ color: 'red' }}>
+                {orderSent}
               </div>
-              <div className='cart__orderInfo--details'>
-                <h3>Datos de envio:</h3>
-                <h5>{formData.name}</h5>
-                <h5>{formData.lastName}</h5>
-                <h5>{formData.phone}</h5>
-                <h5>{formData.address}</h5>
-              </div>
+            </div>
+            <div className='cart__orderInfo--details'>
+              <h3>Datos de envio:</h3>
+              <h4>Comprador: {buyInfo.name + ' ' + buyInfo.lastName}</h4>
+              <h4>Teléfono: {buyInfo.phone}</h4>
+              <h4>Domicilio de entrega: {buyInfo.address}</h4>
+              <h4>Email de contacto: {buyInfo.email}</h4>
+              {buyInfo.payMethod && (
+                typeof buyInfo.payMethod.brand !== 'undefined'
+                  ? (
+                    <>
+                      <h4>Método: Tarjeta ({buyInfo.payMethod.brand.toUpperCase()})</h4>
+                      <h4>Terminada en **** {buyInfo.payMethod.last4}</h4>
+                    </>
+                    )
+                  : (
+                    <>
+                      <h4>Método: Transferencia</h4>
+                      <h4>Titular: {buyInfo.payMethod.accountHolder}</h4>
+                      <h4>ID Transacción: {buyInfo.payMethod.transactionId}</h4>
+                    </>
+                    )
+              )}
             </div>
           </div>
           )
@@ -100,28 +123,36 @@ const Cart = () => {
                 )}
           </div>
           )}
-      <div className='cart__total--container'>
-        <h3>Cant. productos: {cartTotalProducts()}</h3>
-        <h3>Subtotal: {cartTotalPrice()}</h3>
-        <h3>Envío: {cartTotalProducts() >= 2 ? 'Gratis !' : '$' + 10000}</h3>
-        <h2>Total: $ {cartTotalPrice()}</h2>
-      </div>
-      <div className='cart__checkoutBtn--container'>
-        <button onClick={handleOnClick} className='cart__checkoutBtn' alt='Checkout'>
-          Checkout
-        </button>
-      </div>
+      {cartProducts.length
+        ? (
+          <>
+            <div className='cart__total--container'>
+              <h3>Cant. productos: {cartTotalProducts()}</h3>
+              <h3>Subtotal: {cartTotalPrice()}</h3>
+              <h3>Envío: {cartTotalProducts() >= 2 ? 'Gratis !' : '$' + 10000}</h3>
+              <h2>Total: $ {cartTotalPrice()}</h2>
+            </div>
+            <div className='cart__checkoutBtn--container'>
+              <button onClick={handleOnClick} className='cart__checkoutBtn' alt='Checkout'>
+                Checkout
+              </button>
+            </div>
+          </>
+          )
+        : null}
       <div className='navigate__options--container'>
         <MainBtn type='default' text='Ver más productos' />
         <MainBtn type='back' text='Volver' />
       </div>
-      <BuyFormModal
-        data={formData}
-        show={formShow}
-        handleOnClick={handleOnClick}
-        handleOnChange={handleFormData}
-        handleSubmit={handleOrderSubmit}
-      />
+      <Elements stripe={stripePromise}>
+        <BuyFormModal
+          data={formData}
+          show={formShow}
+          handleOnClick={handleOnClick}
+          handleOnChange={handleFormData}
+          handleSubmit={handleOrderSubmit}
+        />
+      </Elements>
     </div>
   )
 }

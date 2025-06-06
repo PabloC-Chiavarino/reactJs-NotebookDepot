@@ -6,7 +6,7 @@ const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([])
 
   const cartAdd = (product) => {
-    const sameId = (inCartProduct) => inCartProduct.id == product.id
+    const sameId = (inCartProduct) => inCartProduct.id === product.id
     const indexProduct = cartProducts.findIndex(sameId)
 
     if (indexProduct === -1) {
@@ -20,21 +20,21 @@ const CartProvider = ({ children }) => {
   }
 
   const cartTotalPrice = () => {
-    return cartProducts.reduce((totalPrice, product) => totalPrice += (product.price * product.quantity), 0)
+    return cartProducts.reduce((totalPrice, product) => totalPrice + (product.price * product.quantity), 0)
   }
 
   const cartTotalProducts = () => {
-    return cartProducts.reduce((totalQuantity, product) => totalQuantity += product.quantity, 0)
+    return cartProducts.reduce((totalQuantity, product) => totalQuantity + product.quantity, 0)
   }
 
   const cartEraseAll = () => setCartProducts([])
 
   const cartErase = (product) => {
-    setCartProducts(cartProducts.filter(inCartProduct => inCartProduct.id != product.id))
+    setCartProducts(cartProducts.filter(inCartProduct => inCartProduct.id !== product.id))
   }
 
   const cartProductDeduct = (product) => {
-    const sameId = (inCartProduct) => inCartProduct.id == product.id
+    const sameId = (inCartProduct) => inCartProduct.id === product.id
     const indexProduct = cartProducts.findIndex(sameId)
 
     cartProducts[indexProduct].quantity -= 1

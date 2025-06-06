@@ -31,7 +31,6 @@
 
 .card__input {
     width: 20px;
-    height: 16px;
     text-align: center;
     border: 1px solid darkgrey;
     border-radius: 2px;
@@ -41,8 +40,6 @@
     font-family: 'anton', sans-serif;
     font-size: 1rem;
     position: absolute;
-    top: -4px;
-
 }
 
 .addBtn {

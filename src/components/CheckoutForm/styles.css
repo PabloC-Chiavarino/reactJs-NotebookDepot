@@ -1,0 +1,105 @@
+.checkoutForm__container {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.checkoutForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkoutForm__userData,
+.checkoutForm__paymentData {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 350px;
+}
+
+.checkoutForm__userData {
+  gap: 2rem;
+}
+
+.checkoutForm__paymentData {
+  gap: 5rem;
+}
+
+.checkoutForm__bankData,
+.checkoutForm__cardData {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.checkoutForm__bankData p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.checkoutForm__cardData {
+  margin-top: 2rem;
+}
+
+.checkoutForm__fieldRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.checkoutForm__fieldRow label {
+  width: 20%;
+}
+.checkoutForm__fieldRow input {
+  padding: 6px;
+  width: 30%;
+}
+
+/* .checkoutForm__payMethodField {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+} */
+
+select {
+  height: 30px;
+}
+
+.StripeElement {
+  padding: 6px;
+  background-color: white;
+  width: 35%;
+}
+
+.checkoutForm__submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  position: relative;
+}
+
+.checkoutForm__submit--btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 48px;
+  text-decoration: none;
+  border: none;
+  font-family: "wix madefor display", sans-serif;
+  background-color: black;
+  color: whitesmoke;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.checkoutForm__submit--btn:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: black;
+  border-color: transparent;
+}

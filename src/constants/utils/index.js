@@ -37,3 +37,19 @@ export const userSuccess = () => {
     text: 'Inicia sesión para continuar'
   })
 }
+
+export const paymentErr = (e) => {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Oops...',
+    text: `${e}`
+  })
+}
+
+export const passwordErr = () => {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Oops...',
+    text: 'La contraseña es incorrecta. Por favor, inténtalo de nuevo.'
+  })
+}
