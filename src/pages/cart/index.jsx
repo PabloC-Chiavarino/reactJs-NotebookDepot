@@ -2,13 +2,14 @@ import { useState, useRef } from 'react'
 import { Elements } from '@stripe/react-stripe-js'
 import { stripePromise } from '../../constants/services/stripe'
 import { addDoc } from 'firebase/firestore'
-import { mailConfirmErr } from '../../constants/utils'
-import { useFirestore, useCartContext, useScroll } from '../../hooks'
+import { mailConfirmErr, mustBeLogged } from '../../constants/utils'
+import { useAuthContext, useFirestore, useCartContext, useScroll } from '../../hooks'
 import { MainBtn, BuyFormModal, OpacityDiv, CartList } from '../../components'
 import { binBig } from '../../assets/icons'
 import './styles.css'
 
 const Cart = () => {
+  const { user } = useAuthContext()
   const [formShow, setFormShow] = useState(false)
   const [formData, setFormData] = useState({})
   const [orderSent, setOrderSent] = useState(null)
@@ -19,7 +20,9 @@ const Cart = () => {
   const ref = useRef()
   useScroll(ref, 'element')
 
-  const handleOnClick = () => setFormShow(!formShow)
+  const handleOnClick = () => {
+    user ? setFormShow(!formShow) : mustBeLogged()
+  }
 
   const handleFormData = (event) => {
     setFormData(

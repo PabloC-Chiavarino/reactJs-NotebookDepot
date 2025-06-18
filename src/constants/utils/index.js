@@ -68,3 +68,11 @@ export const generalErr = (err) => {
     text: firebaseErrorMessages[err.code] || 'Ocurrió un error. Intentá nuevamente.'
   })
 }
+
+export const mustBeLogged = () => {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Oops...',
+    text: 'Debés iniciar sesión para realizar la compra.'
+  })
+}
