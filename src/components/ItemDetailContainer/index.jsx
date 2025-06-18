@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useParams } from 'react-router-dom'
 import { useFirestore, useScroll } from '../../hooks'
 import { ToastContainer } from 'react-toastify'
 import { throwAddPopUp } from '../../constants/utils'
@@ -7,8 +8,9 @@ import 'react-toastify/dist/ReactToastify.css'
 import './styles.css'
 
 const ItemDetailContainer = () => {
+  const { productId } = useParams()
   const ref = useRef()
-  const { loading, data } = useFirestore('unity')
+  const { loading, data } = useFirestore('product', { productId })
   useScroll(ref, 'element')
 
   return (

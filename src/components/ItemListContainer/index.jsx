@@ -9,7 +9,7 @@ const ItemListContainer = () => {
   const productsRef = useRef()
   const location = useLocation()
   const { categoryId } = useParams()
-  const { loading, data } = useFirestore('products')
+  const { loading, data } = useFirestore('products', { categoryId })
 
   const maxItemsShow = data.length > 3
 

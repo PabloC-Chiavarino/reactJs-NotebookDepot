@@ -1,10 +1,24 @@
 import { toast } from 'react-toastify'
+import { firebaseErrorMessages } from '../services/firebase'
 import Swal from 'sweetalert2'
 
 export const throwAddPopUp = () => {
   toast.success('Producto agregado al carrito', {
     position: 'top-right',
-    autoClose: 5000,
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'dark'
+  })
+}
+
+export const throwAuthPopUp = (uemail) => {
+  toast.success(`¡Bienvenido, ${uemail}!`, {
+    position: 'top-right',
+    autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -46,10 +60,11 @@ export const paymentErr = (e) => {
   })
 }
 
-export const passwordErr = () => {
+export const generalErr = (err) => {
+  console.log('Error capturado:', err)
   Swal.fire({
     icon: 'warning',
     title: 'Oops...',
-    text: 'La contraseña es incorrecta. Por favor, inténtalo de nuevo.'
+    text: firebaseErrorMessages[err.code] || 'Ocurrió un error. Intentá nuevamente.'
   })
 }

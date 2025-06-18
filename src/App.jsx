@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { NavBar, Slideshow, ContactForm, Footer, DownChevron } from './components'
 import { useScrollDirection } from './hooks'
 
@@ -5,14 +6,26 @@ import Router from './router'
 function App () {
   const scrollDirection = useScrollDirection()
 
+  const location = useLocation()
+
+  const isDefault = location.pathname === '/' || location.pathname.startsWith('/categories')
+
   return (
     <>
       <NavBar />
-      <Slideshow />
-      <DownChevron scrollDirection={scrollDirection} />
+      {isDefault && (
+        <>
+          <Slideshow />
+          <DownChevron scrollDirection={scrollDirection} />
+        </>
+      )}
       <Router />
-      <ContactForm />
-      <Footer />
+      {isDefault && (
+        <>
+          <ContactForm />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

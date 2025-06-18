@@ -1,72 +1,72 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import { dataBase } from '../../constants/services/firebase'
 import { collection, getDocs, getDoc, doc, query, where } from 'firebase/firestore'
 
-const useFirestore = (requestType) => {
-  const { userId, categoryId, productId } = useParams()
+const useFirestore = (requestType, options = {}) => {
+  const { uid, categoryId, productId } = options
+
   const [data, setData] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
+    const fetchData = async () => {
+      setLoading(true)
+      try {
+        let result
 
-    setTimeout(() => {
-      let requested
-      let queryFilter
-      let data
+        if (requestType === 'user') {
+          if (!uid) {
+            throw new Error('Se necesita el UID para obtener el usuario')
+          }
 
-      const request = async () => {
-        try {
-          if (requestType === 'users') {
-            requested = collection(dataBase, 'users')
-            setData(requested)
-          }
-          if (requestType === 'orders') {
-            requested = collection(dataBase, 'orders')
-            setData(requested)
-          }
-          if (requestType === 'products') {
-            requested = collection(dataBase, 'products')
-            !categoryId
-              ? (
-                  queryFilter = query(requested, where('outstanding', '==', true))
-                )
-              : (
-                  queryFilter = query(requested, where('category', '==', categoryId))
-                )
-            data = await getDocs(queryFilter)
-            setData(
-              data.docs.map(obj => (
-                {
-                  id: obj.id,
-                  ...obj.data()
-                }
-              )
-              ))
+          const docRef = doc(dataBase, 'users', uid)
+          const docSnap = await getDoc(docRef)
+
+          if (docSnap.exists()) {
+            result = { id: docSnap.id, ...docSnap.data() }
           } else {
-            requested = doc(dataBase, 'products', productId)
-            data = await getDoc(requested)
-            setData(
-              {
-                id: data.id,
-                ...data.data()
-              }
-            )
+            throw new Error('El usuario no existe')
           }
-        } catch (err) {
-          setError(err)
-        } finally {
-          setLoading(false)
+        } else if (requestType === 'products') {
+          const collectionRef = collection(dataBase, 'products')
+          const q = categoryId
+            ? query(collectionRef, where('category', '==', categoryId))
+            : query(collectionRef, where('outstanding', '==', true))
+
+          const snapshot = await getDocs(q)
+          result = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+        } else if (requestType === 'product') {
+          if (!productId) {
+            throw new Error('Se necesita productId para obtener el producto')
+          }
+
+          const docRef = doc(dataBase, 'products', productId)
+          const docSnap = await getDoc(docRef)
+
+          if (docSnap.exists()) {
+            result = { id: docSnap.id, ...docSnap.data() }
+          } else {
+            throw new Error('El producto no existe')
+          }
+        } else {
+          throw new Error(`Tipo de request inválido: ${requestType}`)
         }
+
+        setData(result)
+        setError('')
+      } catch (err) {
+        setError(err.message || 'Error al obtener datos')
+        setData(null)
+      } finally {
+        setLoading(false)
       }
+    }
 
-      request()
-    }, 1000)
-  }, [categoryId])
+    fetchData()
+  }, [requestType, uid, categoryId, productId])
 
-  return { loading, data }
+  return { loading, data, error }
 }
 
 export default useFirestore

@@ -89,4 +89,5 @@
   align-items: center;
   gap: 5px;
   margin-top: -5px;
+  width: max-content;
 }

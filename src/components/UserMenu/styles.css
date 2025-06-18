@@ -21,6 +21,7 @@
    z-index: 1;
    font-size: 20px;
    font-weight: bold;
+   animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .userMenu__accountIcon--container {
@@ -31,10 +32,11 @@
    position: absolute;
 }
 
-.userMenu__accountIcon {
+.userMenu__accountIcon, .userMenu__accountIconDisabled {
    width: 8rem;
    height: 8rem;
    align-self: end;
+   animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .userMenu__info {
@@ -44,6 +46,7 @@
    text-align: center;
    align-self: center;
    font-weight: lighter;
+   animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .userMenu__options--container {
@@ -53,13 +56,19 @@
    bottom: 8rem;
    width: 100%;
    align-items: center;
+   animation: fadeIn 0.25s ease-in-out forwards;
 }
 
-.userMenu__options--subcontainer {
+.userMenu__options--rowContainer, .userMenu__options--columnContainer {
    display: flex;
    align-items: center;
    gap: 5px;
    margin-top: -5px;
+}
+
+.userMenu__options--columnContainer {
+   flex-direction: column;
+   gap: 10px;
 }
 
 .userMenu__button {
