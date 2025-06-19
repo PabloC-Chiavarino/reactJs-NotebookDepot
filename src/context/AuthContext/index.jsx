@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { auth } from '../../constants/services/firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, setPersistence, inMemoryPersistence } from 'firebase/auth'
 import { Loader } from '../../components'
 
 export const AuthContext = createContext({})
@@ -22,22 +22,13 @@ export const AuthProvider = ({ children }) => {
     return unsuscribe
   }, [])
 
-  useEffect(() => {
-    if (user) {
-      const timeout = setTimeout(() => {
-        signOut(auth)
-      }, 2 * 60 * 60 * 1000)
-
-      return () => clearTimeout(timeout)
-    }
-  }, [user])
-
   const signUp = async (email, password) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
     return userCredential
   }
 
   const signIn = async (email, password) => {
+    setPersistence(auth, inMemoryPersistence)
     await signInWithEmailAndPassword(auth, email, password)
   }
 

@@ -41,6 +41,7 @@ const Cart = () => {
 
     const order = {
       data: {
+        userId: user.uid,
         name: formData.name,
         lastName: formData.lastName,
         phone: formData.phone,
