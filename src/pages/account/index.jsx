@@ -27,8 +27,7 @@ const Account = () => {
 
       await setDoc(doc(dataBase, 'users', uid), {
         email: uemail,
-        favoritos: [],
-        compras: [],
+        favs: [],
         createdAt: serverTimestamp()
       })
     } catch (err) {

@@ -15,6 +15,7 @@ export const AuthProvider = ({ children }) => {
         setUser(currentUser)
       } else {
         setUser(null)
+        sessionStorage.removeItem('hasShownToast')
       }
       setLoading(false)
     })
@@ -28,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   const signIn = async (email, password) => {
-    setPersistence(auth, inMemoryPersistence)
+    await setPersistence(auth, inMemoryPersistence)
     await signInWithEmailAndPassword(auth, email, password)
   }
 

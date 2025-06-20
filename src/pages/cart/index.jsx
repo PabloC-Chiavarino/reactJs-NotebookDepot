@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react'
 import { Elements } from '@stripe/react-stripe-js'
 import { stripePromise } from '../../constants/services/stripe'
-import { addDoc } from 'firebase/firestore'
-import { mailConfirmErr, mustBeLogged } from '../../constants/utils'
-import { useAuthContext, useFirestore, useCartContext, useScroll } from '../../hooks'
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
+import { dataBase } from '../../constants/services/firebase'
+import { generalErr, mailConfirmErr, mustBeLogged } from '../../constants/utils'
+import { useAuthContext, useCartContext, useScroll } from '../../hooks'
 import { MainBtn, BuyFormModal, OpacityDiv, CartList } from '../../components'
 import { binBig } from '../../assets/icons'
 import './styles.css'
@@ -15,7 +16,6 @@ const Cart = () => {
   const [orderSent, setOrderSent] = useState(null)
   const [buyInfo, setBuyInfo] = useState({})
   const { cartProducts, cartTotalProducts, cartEraseAll, cartTotalPrice } = useCartContext()
-  const { data: orders } = useFirestore('orders')
 
   const ref = useRef()
   useScroll(ref, 'element')
@@ -57,14 +57,19 @@ const Cart = () => {
     }
 
     try {
-      const doc = await addDoc(orders, order)
-      setOrderSent(doc.id)
+      const orderDocRef = collection(dataBase, 'orders')
+      const orderDoc = await addDoc(orderDocRef, order)
+      setOrderSent(orderDoc.id)
+
+      const userOrderRef = doc(dataBase, 'users', user.uid, 'orders', orderDoc.id)
+      await setDoc(userOrderRef, order)
+
       setBuyInfo(order.data)
       cartEraseAll()
       setFormData({})
       setFormShow(false)
     } catch (err) {
-      console.log(err)
+      generalErr(err)
     }
   }
 

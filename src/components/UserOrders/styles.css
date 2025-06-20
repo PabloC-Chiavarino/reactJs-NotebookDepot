@@ -1,0 +1,32 @@
+.userOrders__list {
+  list-style: none;
+  padding: 0;
+}
+
+.userOrders__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.userOrders__column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.userOrders__column ul {
+  padding-left: 1rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.userOrders__column li {
+  margin-bottom: 0.25rem;
+}

@@ -28,6 +28,12 @@ const useFirestore = (requestType, options = {}) => {
           } else {
             throw new Error('El usuario no existe')
           }
+        } else if (requestType === 'orders') {
+          if (!uid) throw new Error('Se necesita el UID para obtener las órdenes')
+          const collectionRef = collection(dataBase, 'users', uid, 'orders')
+
+          const snapshot = await getDocs(collectionRef)
+          result = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
         } else if (requestType === 'products') {
           const collectionRef = collection(dataBase, 'products')
           const q = categoryId

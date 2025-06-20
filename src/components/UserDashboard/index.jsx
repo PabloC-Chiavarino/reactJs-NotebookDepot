@@ -16,7 +16,12 @@ const UserDashboard = () => {
 
   useEffect(() => {
     if (!loading && data?.email) {
-      throwAuthPopUp(data.email)
+      const toastShown = sessionStorage.getItem('hasShownToast')
+
+      if (!toastShown) {
+        throwAuthPopUp(data.email)
+        sessionStorage.setItem('hasShownToast', 'true')
+      }
     }
   }, [data, loading])
 
@@ -33,7 +38,14 @@ const UserDashboard = () => {
           <Link to='/account/dashboard/favs' className='userDashboard__btn'>Favoritos</Link>
           <Link to='/account/dashboard/data' className='userDashboard__btn'>Datos de usuario</Link>
         </div>
-        <button className='userDashboard__signOutBtn' onClick={signOutUser}>Cerrar sesión</button>
+        <button
+          className='userDashboard__signOutBtn'
+          onClick={() => {
+            sessionStorage.removeItem('hasShownToast')
+            signOutUser()
+          }}
+        >Cerrar sesión
+        </button>
       </aside>
       <ToastContainer />
     </div>
