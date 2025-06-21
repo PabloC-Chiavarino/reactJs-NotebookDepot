@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 export const throwAddPopUp = () => {
   toast.success('Producto agregado al carrito', {
     position: 'top-right',
-    autoClose: 3000,
+    autoClose: 1750,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -18,7 +18,33 @@ export const throwAddPopUp = () => {
 export const throwAuthPopUp = (uemail) => {
   toast.success(`¡Bienvenido, ${uemail}!`, {
     position: 'top-right',
-    autoClose: 3000,
+    autoClose: 1750,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'dark'
+  })
+}
+
+export const throwAddFavPopUp = () => {
+  toast.success('Producto agregado a favoritos', {
+    position: 'top-right',
+    autoClose: 1750,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'dark'
+  })
+}
+
+export const throwDeleteFavPopUp = () => {
+  toast.success('Producto eliminado de favoritos', {
+    position: 'top-right',
+    autoClose: 1750,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -69,10 +95,10 @@ export const generalErr = (err) => {
   })
 }
 
-export const mustBeLogged = () => {
+export const mustBeLogged = (string) => {
   Swal.fire({
     icon: 'warning',
     title: 'Oops...',
-    text: 'Debés iniciar sesión para realizar la compra.'
+    text: `Debés iniciar sesión para ${string}.`
   })
 }

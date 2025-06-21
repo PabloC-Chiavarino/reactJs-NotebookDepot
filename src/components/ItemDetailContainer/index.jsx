@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { useFirestore, useScroll } from '../../hooks'
 import { ToastContainer } from 'react-toastify'
-import { throwAddPopUp } from '../../constants/utils'
+import { throwAddPopUp, throwAddFavPopUp, throwDeleteFavPopUp } from '../../constants/utils'
 import { Loader, ItemDetail } from '../../components'
 import 'react-toastify/dist/ReactToastify.css'
 import './styles.css'
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       {loading
         ? <Loader greeting='Cargando' />
         : (
-          <ItemDetail product={data} onAddPopUp={throwAddPopUp} />
+          <ItemDetail product={data} onAddPopUp={throwAddPopUp} throwAddFavPopUp={throwAddFavPopUp} throwDeleteFavPopUp={throwDeleteFavPopUp} />
           )}
       <ToastContainer />
     </div>

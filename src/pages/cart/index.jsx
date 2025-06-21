@@ -21,7 +21,7 @@ const Cart = () => {
   useScroll(ref, 'element')
 
   const handleOnClick = () => {
-    user ? setFormShow(!formShow) : mustBeLogged()
+    user ? setFormShow(!formShow) : mustBeLogged('continuar con tu compra')
   }
 
   const handleFormData = (event) => {
