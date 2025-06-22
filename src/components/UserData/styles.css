@@ -1,0 +1,85 @@
+.userDataForm__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.userDataForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 800px;
+  color: rgb(48, 48, 48);
+}
+
+.userDataForm__userData {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.userDataForm__column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 300px;
+}
+
+.userDataForm__fieldRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.userDataForm__fieldRow label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.userDataForm__fieldRow input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border 0.3s ease;
+}
+
+.userDataForm__fieldRow input:focus {
+  border-color: #803cb7b0;
+  outline: none;
+}
+
+.userDataForm__submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userDataForm__submit--btn {
+  padding: 0.75rem 2rem;
+  background-color: #803cb7b0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.userDataForm__submit--btn:hover {
+  background-color: #6d2b99;
+  transform: translateY(-2px);
+}
+
+.userDataForm__submit--btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

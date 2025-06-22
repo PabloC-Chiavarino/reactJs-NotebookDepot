@@ -1,13 +1,23 @@
 import { useState } from 'react'
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js'
-import { paymentErr } from '../../constants/utils'
+import { useAuthContext, useFirestore } from '../../hooks'
+import { generalErr, paymentErr } from '../../constants/utils'
 import './styles.css'
 
 const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
+  const { user } = useAuthContext()
+  const { data: userData, loading, error } = useFirestore('user', { uid: user?.uid })
   const [paymentOption, setPaymentOption] = useState('card')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const stripe = useStripe()
   const elements = useElements()
+
+  if (loading) return <p>Loading...</p>
+
+  if (error) {
+    generalErr(error)
+    return
+  }
 
   const handlePaymentOption = (e) => {
     setPaymentOption(e.target.value)
@@ -89,7 +99,7 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
               name='name'
               placeholder='John'
               onChange={handleOnChange}
-              value={data.name || ''}
+              value={userData.name || data.name}
               required
             />
           </div>
@@ -100,7 +110,7 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
               name='lastName'
               placeholder='Wick'
               onChange={handleOnChange}
-              value={data.lastName || ''}
+              value={userData.lastname || data.lastName}
               required
             />
           </div>
@@ -111,7 +121,7 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
               name='phone'
               placeholder='01144444444'
               onChange={handleOnChange}
-              value={data.phone || ''}
+              value={userData.phone || data.phone}
               required
             />
           </div>
@@ -122,7 +132,7 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
               name='address'
               placeholder='a donde te lo enviamos?'
               onChange={handleOnChange}
-              value={data.address || ''}
+              value={userData.address || data.address}
               required
             />
           </div>
@@ -133,7 +143,7 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
               name='email'
               placeholder='johnwick@..'
               onChange={handleOnChange}
-              value={data.email || ''}
+              value={userData.email || data.email}
               required
             />
           </div>
@@ -144,7 +154,7 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
               name='emailOk'
               placeholder='johnwick@..'
               onChange={handleOnChange}
-              value={data.emailOk || ''}
+              value={userData.emailConfirm || data.emailOk}
               required
             />
           </div>
