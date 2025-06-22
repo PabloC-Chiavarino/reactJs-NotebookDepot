@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { dataBase } from '../../constants/services/firebase'
-import { doc, setDoc, deleteDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore'
 import { useCartContext, useAuthContext } from '../../hooks'
 import { ItemCount, MainBtn } from '../../components'
 import { mustBeLogged, generalErr } from '../../constants/utils'
@@ -9,9 +9,34 @@ import './styles.css'
 
 const ItemDetail = ({ product, onAddPopUp, throwAddFavPopUp, throwDeleteFavPopUp }) => {
   const [isFav, setIsFav] = useState(false)
-  const { img, name, detail, price, stock } = product
   const { cartAdd } = useCartContext()
   const { user } = useAuthContext()
+
+  if (!product) return <p>Cargando producto...</p>
+
+  const { img, name, detail, price, stock } = product
+
+  useEffect(() => {
+    const checkIfFav = async () => {
+      if (user && product?.id) {
+        try {
+          const userFavRef = doc(dataBase, 'users', user.uid, 'favs', product.id)
+          const docSnap = await getDoc(userFavRef)
+          if (docSnap.exists()) {
+            setIsFav(true)
+          }
+        } catch (err) {
+          generalErr(err)
+        }
+      }
+
+      if (!user) {
+        setIsFav(false)
+      }
+    }
+
+    checkIfFav()
+  }, [user, product])
 
   const fav = {
     id: product.id,

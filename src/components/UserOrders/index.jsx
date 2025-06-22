@@ -11,7 +11,6 @@ const UserOrders = () => {
   if (!orders || orders.length === 0) {
     return <p>No tienes órdenes.</p>
   }
-  console.log(orders)
 
   return (
     <div>
