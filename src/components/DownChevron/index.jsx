@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useFirestore } from '../../hooks'
-import downChevron from '../../assets/Icons/down-chevron.png'
+import downChevron from '../../assets/icons/down-chevron.png'
 import './styles.css'
 
 const DownChevron = ({ scrollDirection }) => {
