@@ -19,6 +19,7 @@ const UserFavs = () => {
 
   if (loading) return <p>Cargando favoritos...</p>
   if (error) return <p>Error: {error}</p>
+
   if (!favs || favs.length === 0 || localUserFavs.length === 0) {
     return <strong><p style={{ fontSize: '1.25rem' }}>No has guardado favoritos.</p></strong>
   }

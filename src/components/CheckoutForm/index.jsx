@@ -54,6 +54,8 @@ const CheckoutForm = ({ data, handleOnChange, handleSubmit }) => {
       }
 
       await handleSubmit(paymentInfo)
+
+      setIsSubmitting(false)
     } else if (paymentOption === 'bank') {
       const paymentInfo = {
         accountHolder: data.accountHolder,

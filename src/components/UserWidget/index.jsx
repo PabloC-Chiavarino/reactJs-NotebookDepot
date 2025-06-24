@@ -8,10 +8,16 @@ const UserWidget = ({ handleOnClick }) => {
   const { user } = useAuthContext()
   const { data } = useFirestore('user', { uid: user?.uid, email: user?.email })
 
+  const disabledRoutes = ['/account/dashboard', '/account/signIn']
+  const isClickDisabled = disabledRoutes.includes(location.pathname)
+
+  const handleClick = isClickDisabled ? null : handleOnClick
+  const icon = user ? userIcon : userIconDisabled
+
   return (
     <div className='userWidget__container'>
       {user && data && <span className='userWidget__email'>{data.email}</span>}
-      {user ? <img src={userIcon} alt='' onClick={location.pathname === '/account/dashboard' ? null : handleOnClick} /> : <img src={userIconDisabled} alt='' onClick={location.pathname === '/account/dashboard' ? null : handleOnClick} />}
+      <img src={icon} alt='' onClick={handleClick} />
     </div>
   )
 }

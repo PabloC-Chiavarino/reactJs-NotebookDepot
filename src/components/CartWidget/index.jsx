@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { useCartContext } from '../../hooks'
 import { cartImg } from '../../assets/icons/'
 import './styles.css'
@@ -7,7 +8,7 @@ const CartWidget = ({ handleOnClick }) => {
 
   return (
     <>
-      <div onClick={handleOnClick} className='cartContainer'>
+      <div onClick={useLocation().pathname === '/cart' ? null : handleOnClick} className='cartContainer'>
         <div
           className='cartContainer__count'
           style={{ display: cartProducts.length ? 'block' : 'none' }}

@@ -28,5 +28,11 @@
     "gh-pages": "^5.0.0",
     "standard": "^17.1.2",
     "vite": "^4.1.0"
+  },
+  "standard": {
+    "env": [
+      "browser",
+      "es6"
+    ]
   }
 }
