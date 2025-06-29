@@ -9,7 +9,7 @@
    width: 100dvw;
    justify-content: center;
    gap: 3rem;
-   margin-top: 13rem;
+   margin-top: 17rem;
    scroll-behavior: smooth;
    animation: fadeIn 0.5s ease-in-out forwards;
 }

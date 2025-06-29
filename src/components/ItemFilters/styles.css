@@ -1,0 +1,38 @@
+.filters-bar {
+  display: flex;
+  width: 97%;
+  gap: 10rem;
+  padding: 0.5rem;
+  background-color: #dcdcdc;
+  position: absolute;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  margin-top: 11rem;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  align-items: center;
+}
+
+.filter-title {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+select {
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  background-color: #b9b9b9;
+  color: #484848;
+}

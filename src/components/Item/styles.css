@@ -13,6 +13,7 @@
    transition: 0.25s ease;
    position: relative;
    background-color: #dcdcdc;
+   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .card:hover {
