@@ -31,7 +31,7 @@ const NavBar = () => {
         </Link>
         <div className='menu__container'>
           <ul className='categories__list'>
-            <NavLink to='/categories/family' className='categories'><li>Hogar</li></NavLink>
+            <NavLink to='/categories/home' className='categories'><li>Hogar</li></NavLink>
             <NavLink to='/categories/professional' className='categories'><li>Diseño y desarrollo</li></NavLink>
             <NavLink to='/categories/gaming' className='categories'><li>Gaming</li></NavLink>
           </ul>

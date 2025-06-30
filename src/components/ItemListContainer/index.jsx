@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   const location = useLocation()
   const { categoryId } = useParams()
   const { loading, data } = useFirestore('products', { categoryId })
-
+  console.log(data)
   const [filters, setFilters] = useState({
     brand: '',
     processor: '',
@@ -18,7 +18,11 @@ const ItemListContainer = () => {
     screensize: ''
   })
 
-  const filteredData = data.filter((item) => {
+  const homePath = (
+    location.pathname === '/'
+  )
+
+  const filteredData = homePath ? data : data.filter((item) => {
     const { brand, processor, ram, screensize } = filters
 
     if (brand && item.brand !== brand) return false
@@ -31,29 +35,30 @@ const ItemListContainer = () => {
 
   const maxItemsShow = filteredData.length > 3
 
-  const shouldScroll = (
-    location.pathname !== '/'
-  )
-
-  const scrollType = shouldScroll ? 'element' : 'manual'
+  const scrollType = homePath ? 'manual' : 'element'
 
   useScroll(sectionRef, scrollType)
 
   const scrollBack = () => {
-    productsRef.current.scrollLeft = -400
+    productsRef.current.scrollLeft -= 400
   }
 
   const scrollForward = () => {
-    productsRef.current.scrollLeft = 400
+    productsRef.current.scrollLeft += 400
+  }
+
+  const capitalize = (string) => {
+    if (!string) return
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   return (
     <section className='products__container' ref={sectionRef}>
       {loading
         ? (
-            categoryId
+            capitalize(categoryId)
               ? (
-                <Loader greeting={`Cargando ${categoryId}`} />
+                <Loader greeting={`Cargando ${capitalize(categoryId)}`} />
                 )
               : (
                 <Loader greeting='Bienvenido' />
@@ -61,8 +66,8 @@ const ItemListContainer = () => {
           )
         : (
           <>
-            <SectionTitle section={categoryId || 'Productos Destacados'} />
-            <ItemFilters filters={filters} setFilters={setFilters} data={data} />
+            <SectionTitle section={categoryId ? capitalize(categoryId) : 'Productos Destacados'} />
+            {!homePath && <ItemFilters filters={filters} setFilters={setFilters} data={data} />}
             <div ref={productsRef} className={`products__container--items ${maxItemsShow ? 'has-buttons' : ''}`}>
               {maxItemsShow && <BackBtn scrollBack={scrollBack} />}
               <ItemList data={filteredData} />
