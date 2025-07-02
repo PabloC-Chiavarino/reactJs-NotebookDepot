@@ -7,7 +7,9 @@ const Item = ({ product }) => {
   return (
     <Link to={`/categories/${category}/product/detail/${id}`} style={{ textDecoration: 'none' }}>
       <div className='card'>
-        <img className='card__img' src={img} alt='TEST' />
+        <div className='card__img--wrapper'>
+          <img className='card__img' src={img} alt='TEST' />
+        </div>
         <h4 className='card__name'>{name}</h4>
         <div className='card__detail--container'>
           <p className='card__detail'>{detail}</p>
