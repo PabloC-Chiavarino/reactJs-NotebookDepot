@@ -93,3 +93,24 @@
   cursor: pointer;
   transform: scale(.6);
 }
+
+@media screen and (max-width: 1366px) {
+  .itemResume__container {
+  height: 100px;
+  font-size: 1rem;
+  align-items: center;
+}
+  
+  .itemResume__img {
+  width: 85px;
+  height: 75px;
+}
+
+.itemResume__subContainer {
+  font-size: .9rem;
+}
+
+.itemResume__price {
+  font-size: 1rem;
+}
+}

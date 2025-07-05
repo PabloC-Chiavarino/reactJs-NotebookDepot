@@ -103,3 +103,9 @@ select {
   color: black;
   border-color: transparent;
 }
+
+@media screen and (max-width: 1366px) {
+  .checkoutForm__userData {
+    gap: 1.5rem;
+  }
+}

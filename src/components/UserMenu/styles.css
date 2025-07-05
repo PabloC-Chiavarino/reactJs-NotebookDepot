@@ -1,104 +1,123 @@
 .userMenu__container {
-   display: flex;
-   justify-content: center;
-   width: 23%;
-   height: 86%;
-   padding: 2rem;
-   background-color: #dcdcdc;
-   position: fixed;
-   top: 62px;
-   right: 0;
-   transform: translate(100%);
-   transition: 0.2s ease-in-out;
-   z-index: 2;
+  display: flex;
+  justify-content: center;
+  width: 23%;
+  height: 86%;
+  padding: 2rem;
+  background-color: #dcdcdc;
+  position: fixed;
+  top: 62px;
+  right: 0;
+  transform: translate(100%);
+  transition: 0.2s ease-in-out;
+  z-index: 2;
 }
 
 .userMenu__close {
-   position: absolute;
-   top: 1rem;
-   left: 1.5rem;
-   cursor: pointer;
-   z-index: 1;
-   font-size: 20px;
-   font-weight: bold;
-   animation: fadeIn 0.25s ease-in-out forwards;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: bold;
+  animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .userMenu__accountIcon--container {
-   width: 100%;
-   height: 40%;
-   display: flex;
-   justify-content: center;
-   position: absolute;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
 }
 
-.userMenu__accountIcon, .userMenu__accountIconDisabled {
-   width: 8rem;
-   height: 8rem;
-   align-self: end;
-   animation: fadeIn 0.25s ease-in-out forwards;
+.userMenu__accountIcon,
+.userMenu__accountIconDisabled {
+  width: 8rem;
+  height: 8rem;
+  align-self: end;
+  animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .userMenu__info {
-   font-size: 1.25rem;
-   width: 100%;
-   position: absolute;
-   text-align: center;
-   align-self: center;
-   font-weight: lighter;
-   animation: fadeIn 0.25s ease-in-out forwards;
+  font-size: 1.25rem;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  align-self: center;
+  font-weight: lighter;
+  animation: fadeIn 0.25s ease-in-out forwards;
 }
 
 .userMenu__options--container {
-   display: flex;
-   position: absolute;
-   flex-direction: column;
-   bottom: 8rem;
-   width: 100%;
-   align-items: center;
-   animation: fadeIn 0.25s ease-in-out forwards;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  bottom: 8rem;
+  width: 100%;
+  align-items: center;
+  animation: fadeIn 0.25s ease-in-out forwards;
 }
 
-.userMenu__options--rowContainer, .userMenu__options--columnContainer {
-   display: flex;
-   align-items: center;
-   gap: 5px;
-   margin-top: -5px;
+.userMenu__options--rowContainer,
+.userMenu__options--columnContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: -5px;
 }
 
 .userMenu__options--columnContainer {
-   flex-direction: column;
-   gap: 10px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .userMenu__button {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 205px;
-   height: 48px;
-   text-decoration: none;
-   font-family: "wix madefor display", sans-serif;
-   color: #292929;
-   border: none;
-   transition: 0.3s;
-   letter-spacing: 1px;
-   font-size: 14px;
-   position: relative;
-   z-index: 1;
-   background-color: #803cb7b0;
-   color: whitesmoke;
-   &:hover {
-      cursor: pointer;
-      background-color: whitesmoke;
-      color: #803cb7b0;
-      border-color: transparent;
-   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 205px;
+  height: 48px;
+  text-decoration: none;
+  font-family: "wix madefor display", sans-serif;
+  color: #292929;
+  border: none;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  background-color: #803cb7b0;
+  color: whitesmoke;
+  &:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: #803cb7b0;
+    border-color: transparent;
+  }
 }
 
 .userMenu__accountSet {
-   color: rgb(51, 51, 153);
-   &:hover {
-      cursor: pointer;
-   }
+  color: rgb(51, 51, 153);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .userMenu__accountIcon,
+  .userMenu__accountIconDisabled {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .userMenu__accountIcon--container {
+  height: 35%;
+}
+
+  .userMenu__info {
+    font-size: 1rem;
+    top: 15rem;
+  }
 }

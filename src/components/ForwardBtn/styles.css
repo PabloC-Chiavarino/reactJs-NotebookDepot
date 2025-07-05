@@ -3,12 +3,32 @@
   cursor: pointer;
   position: absolute;
   right: 13%;
-  top: 60%;
+  top: 54%;
   transition: 0.2s;
   border-radius: 50%;
   width: 70px;
   background-color: darkgrey;
   &:hover {
     background-color: #e2e2e2;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .forwardBtn {
+    top: 54%;
+    right: 9%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .forwardBtn {
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .forwardBtn {
+    top: 50%;
+    right: 3%;
   }
 }

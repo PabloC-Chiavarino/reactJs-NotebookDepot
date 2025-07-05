@@ -8,7 +8,7 @@
   font-weight: bold;
   letter-spacing: 1px;
   position: relative;
-  transition: background-color .2s ease-in;
+  transition: background-color 0.2s ease-in;
 }
 
 .slider__item--container:hover {
@@ -82,10 +82,32 @@
 
 .slider__item--delete {
   transition: all 0.2s ease-in-out;
-  transform: scale(.55);
+  transform: scale(0.55);
 }
 
 .slider__item--delete:hover {
-  transform: scale(.65);
+  transform: scale(0.65);
   cursor: pointer;
+}
+
+@media screen and (max-width: 1440px) {
+  .slider__item--info {
+    margin-left: 8.5rem;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .slider__item--name {
+    font-size: 13px;
+  }
+
+  .slider__item--img {
+    width: 75px;
+  }
+
+  .slider__item--delete {
+    transform: scale(0.35);
+}
+
 }

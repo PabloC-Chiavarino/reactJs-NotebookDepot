@@ -5,6 +5,7 @@ import { dataBase } from '../../constants/services/firebase'
 import { doc, deleteDoc } from 'firebase/firestore'
 import { generalErr, throwDeleteFavPopUp } from '../../constants/utils'
 import { binBig } from '../../assets/icons'
+import Loader from '../Loader'
 import './styles.css'
 
 const UserFavs = () => {
@@ -17,8 +18,12 @@ const UserFavs = () => {
     setLocalUserFavs(favs)
   }, [favs])
 
-  if (loading) return <p>Cargando favoritos...</p>
-  if (error) return <p>Error: {error}</p>
+  if (loading) return <Loader greeting='Cargando' />
+
+  if (error) {
+    generalErr(error)
+    return
+  }
 
   if (!favs || favs.length === 0 || localUserFavs.length === 0) {
     return <strong><p style={{ fontSize: '1.25rem' }}>No has guardado favoritos.</p></strong>
@@ -36,7 +41,7 @@ const UserFavs = () => {
   }
 
   return (
-    <div>
+    <div className='userFavs__container'>
       <h1>Favoritos</h1>
       {localUserFavs.map((fav) => (
         <div key={fav.id} className='userFavs__row-wrapper'>

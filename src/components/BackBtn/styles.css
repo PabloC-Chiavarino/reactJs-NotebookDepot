@@ -3,12 +3,32 @@
   cursor: pointer;
   position: absolute;
   left: 13%;
-  top: 60%;
+  top: 54%;
   transition: 0.2s;
   border-radius: 50%;
   width: 70px;
   background-color: darkgrey;
   &:hover {
     background-color:  #e2e2e2;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .backBtn {
+    top: 54%;
+    left: 9%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .backBtn {
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .backBtn {
+    top: 50%;
+    left: 3%;
   }
 }

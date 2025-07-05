@@ -1,19 +1,25 @@
 import { useFirestore, useAuthContext } from '../../hooks'
+import { generalErr } from '../../constants/utils'
+import Loader from '../Loader'
 import './styles.css'
 
 const UserOrders = () => {
   const { user } = useAuthContext()
   const { data: orders, loading, error } = useFirestore('orders', { uid: user?.uid })
 
-  if (loading) return <p>Cargando órdenes...</p>
-  if (error) return <p>Error: {error}</p>
+  if (loading) return <Loader greeting='Cargando' />
+
+  if (error) {
+    generalErr(error)
+    return
+  }
 
   if (!orders || orders.length === 0) {
     return <p>No tienes órdenes.</p>
   }
 
   return (
-    <div>
+    <div className='userOrders__container'>
       <h1>Compras realizadas</h1>
       <ul className='userOrders__list'>
         {orders.map((order) => (

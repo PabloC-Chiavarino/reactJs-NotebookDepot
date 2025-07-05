@@ -1,7 +1,19 @@
 .productsSection {
-   height: 90dvh;
+   height: 110dvh;
    box-shadow: 0px -1.5px 5px 1px #131313;
    background-color: #242424;
    position: relative;
    top: 90dvh;
+}
+
+@media screen and (max-width: 1600px) {
+   .productsSection {
+      height: 100dvh;
+   }
+}
+
+@media screen and (max-width: 1366px) {
+   .productsSection {
+      height: 140dvh;
+   }
 }

@@ -59,3 +59,24 @@
 .userFavs__bin--img:hover {
   transform: translateY(-5px);
 }
+
+@media screen and (max-width: 1366px) {
+  .userFavs__container h1 {
+    font-size: 1.3rem;
+    margin-top: 4rem;
+  }
+
+  .userFavs__column img {
+  width: 110px;
+  height: 110px;
+}
+
+.userFavs__bin--img {
+  width: 45px;
+  height: 45px;
+}
+
+.userFavs__column h3 {
+  font-size: 1.1rem;
+} 
+}

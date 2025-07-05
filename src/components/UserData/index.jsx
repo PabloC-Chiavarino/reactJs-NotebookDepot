@@ -3,6 +3,7 @@ import { doc, setDoc } from 'firebase/firestore'
 import { dataBase } from '../../constants/services/firebase'
 import { useAuthContext, useFirestore } from '../../hooks'
 import { generalErr, mailConfirmErr } from '../../constants/utils'
+import Loader from '../Loader'
 import './styles.css'
 
 const UserData = () => {
@@ -11,7 +12,7 @@ const UserData = () => {
   const { user } = useAuthContext()
   const { data: userData, loading, error } = useFirestore('user', { uid: user?.uid })
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loader greeting='Cargando' />
 
   if (error) {
     generalErr(error)
@@ -50,7 +51,7 @@ const UserData = () => {
   return (
     <>
       <div>
-        <h1>UserData</h1>
+        <h1>Datos de usuario</h1>
       </div>
       <div className='userDataForm__container'>
         <form className='userDataForm' onSubmit={onSubmit}>

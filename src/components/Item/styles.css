@@ -89,3 +89,9 @@
   font-size: 0.8rem;
   color: green;
 }
+
+@media screen and (max-width: 1366px) {
+  .card__img {
+    width: 145px;
+  }
+}

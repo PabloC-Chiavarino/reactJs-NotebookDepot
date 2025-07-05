@@ -87,3 +87,15 @@
    font-weight: lighter;
    align-self: center;
 }
+
+@media screen and (max-width: 1600px) {
+   .footer__container {
+      top: 89dvh;
+   }
+}
+
+@media screen and (max-width: 1366px) {
+  .footer__container {
+    top: 88dvh;
+  }
+}

@@ -25,3 +25,9 @@
   opacity: 0.8;
   animation: upDownBounce 3000ms ease-in-out 500ms infinite;
 }
+
+@media screen and (max-width: 1366px) {
+  .downChevron {
+    width: 85px;
+  }
+}

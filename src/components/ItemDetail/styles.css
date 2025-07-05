@@ -1,6 +1,7 @@
 .detail__container {
   display: flex;
   position: relative;
+  bottom: 5rem;
   background-color: white;
   width: 95%;
   max-width: 80rem;
@@ -22,9 +23,15 @@
   justify-content: start;
 }
 
+.detail__img--wrapper {
+  display: flex;
+  align-items: center;
+  width: 530px;
+  justify-content: center;
+}
+
 .detail__img {
   width: 430px;
-  height: 430px;
   position: absolute;
   padding-left: 20px;
 }
@@ -99,4 +106,44 @@
 .heart-img {
   width: 100%;
   height: 100%;
+}
+
+.tech-specs__container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: absolute;
+  gap: 1rem;
+  margin-top: 30rem;
+  width: 95%;
+  max-width: 80rem;
+  font-family: "wix madefor display", sans-serif;
+}
+
+.tech-specs__title {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.tech-specs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.tech-specs__item {
+  flex: 0 1 30%; /* ocupa casi la mitad del ancho disponible */
+  font-size: 1rem; /* fuente un poco más grande */
+  color: #222;
+  font-weight: 600; /* semi-bold */
+  letter-spacing: 0.8px;
+  
 }

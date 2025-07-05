@@ -3,7 +3,7 @@ import { dataBase } from '../../constants/services/firebase'
 import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore'
 import { useCartContext, useAuthContext } from '../../hooks'
 import { ItemCount, MainBtn } from '../../components'
-import { mustBeLogged, generalErr } from '../../constants/utils'
+import { mustBeLogged, generalErr, capitalizeStr } from '../../constants/utils'
 import { favImg, noFavImg } from '../../assets/icons'
 import './styles.css'
 
@@ -88,7 +88,9 @@ const ItemDetail = ({ product, onAddPopUp, throwAddFavPopUp, throwDeleteFavPopUp
 
   return (
     <div className='detail__container'>
-      <img className='detail__img' src={img} alt='product' draggable={false} />
+      <div className='detail__img--wrapper'>
+        <img className='detail__img' src={img} alt='product' draggable={false} />
+      </div>
       <div className='detail__container--info'>
         <h2 className='detail__name'>{name}</h2>
         <div className='detail__description--container'>
@@ -111,6 +113,16 @@ const ItemDetail = ({ product, onAddPopUp, throwAddFavPopUp, throwDeleteFavPopUp
       <ItemCount avaiableStock={stock} onAdd={handleOnAdd} />
       <div className='detail__mainBtn--container'>
         <MainBtn text='Volver' />
+      </div>
+      <div className='tech-specs__container'>
+        <h3 className='tech-specs__title'>ESPECIFICACIONES TÉCNICAS</h3>
+        <ul className='tech-specs__list'>
+          <li className='tech-specs__item'>Marca: {capitalizeStr(product.brand)}</li>
+          <li className='tech-specs__item'>Procesador: {capitalizeStr(product.processor)}</li>
+          <li className='tech-specs__item'>RAM: {product.ram}</li>
+          <li className='tech-specs__item'>Pantalla: {product.screensize}</li>
+          <li className='tech-specs__item'>Almacenamiento: {product.storage}</li>
+        </ul>
       </div>
     </div>
   )

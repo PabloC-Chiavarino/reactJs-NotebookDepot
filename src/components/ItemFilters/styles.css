@@ -1,25 +1,26 @@
 .filters-bar {
   display: flex;
-  width: 97%;
-  gap: 10rem;
-  padding: 0.5rem;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 1rem;
   background-color: #dcdcdc;
-  position: absolute;
-  justify-content: center;
+  width: 350px;
   animation: fadeIn 0.5s ease-in-out forwards;
-  margin-top: 11rem;
+  height: 110%;
+  z-index: 1;
+  justify-content: center;
 }
 
 .filter-group {
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   font-size: 0.9rem;
-  align-items: center;
 }
 
 .filter-title {
   font-weight: bold;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .filter-group label {
@@ -29,10 +30,13 @@
   cursor: pointer;
 }
 
-select {
-  height: 30px;
-  border-radius: 3px;
-  border: none;
-  background-color: #b9b9b9;
-  color: #484848;
+.filter-group input[type="checkbox"] {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+   .filters-bar {
+      margin-top: 10rem;
+      padding: .2rem;
+   }
 }

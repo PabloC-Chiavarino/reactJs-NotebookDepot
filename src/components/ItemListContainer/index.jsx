@@ -1,6 +1,7 @@
 import { useParams, useLocation } from 'react-router-dom'
 import { useRef, useState } from 'react'
 import { useFirestore, useScroll } from '../../hooks'
+import { capitalizeStr } from '../../constants/utils'
 import { Loader, ItemList, SectionTitle, BackBtn, ForwardBtn, ItemFilters } from '../../components'
 import './styles.css'
 
@@ -10,12 +11,12 @@ const ItemListContainer = () => {
   const location = useLocation()
   const { categoryId } = useParams()
   const { loading, data } = useFirestore('products', { categoryId })
-  console.log(data)
   const [filters, setFilters] = useState({
-    brand: '',
-    processor: '',
-    ram: '',
-    screensize: ''
+    brand: [],
+    processor: [],
+    ram: [],
+    screensize: [],
+    storage: []
   })
 
   const homePath = (
@@ -23,12 +24,13 @@ const ItemListContainer = () => {
   )
 
   const filteredData = homePath ? data : data.filter((item) => {
-    const { brand, processor, ram, screensize } = filters
+    const { brand, processor, ram, screensize, storage } = filters
 
-    if (brand && item.brand !== brand) return false
-    if (processor && item.processor !== processor) return false
-    if (ram && item.ram !== ram) return false
-    if (screensize && item.screensize !== screensize) return false
+    if (brand.length > 0 && !brand.includes(item.brand)) return false
+    if (processor.length > 0 && !processor.includes(item.processor)) return false
+    if (ram.length > 0 && !ram.includes(item.ram)) return false
+    if (screensize.length > 0 && !screensize.includes(item.screensize)) return false
+    if (storage.length > 0 && !storage.includes(item.storage)) return false
 
     return true
   })
@@ -47,18 +49,13 @@ const ItemListContainer = () => {
     productsRef.current.scrollLeft += 400
   }
 
-  const capitalize = (string) => {
-    if (!string) return
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
-
   return (
     <section className='products__container' ref={sectionRef}>
       {loading
         ? (
-            capitalize(categoryId)
+            capitalizeStr(categoryId)
               ? (
-                <Loader greeting={`Cargando ${capitalize(categoryId)}`} />
+                <Loader greeting={`Cargando ${capitalizeStr(categoryId)}`} />
                 )
               : (
                 <Loader greeting='Bienvenido' />
@@ -66,12 +63,14 @@ const ItemListContainer = () => {
           )
         : (
           <>
-            <SectionTitle section={categoryId ? capitalize(categoryId) : 'Productos Destacados'} />
-            {!homePath && <ItemFilters filters={filters} setFilters={setFilters} data={data} />}
-            <div ref={productsRef} className={`products__container--items ${maxItemsShow ? 'has-buttons' : ''}`}>
-              {maxItemsShow && <BackBtn scrollBack={scrollBack} />}
-              <ItemList data={filteredData} />
-              {maxItemsShow && <ForwardBtn scrollForward={scrollForward} />}
+            <SectionTitle section={categoryId ? capitalizeStr(categoryId) : 'Productos Destacados'} />
+            <div className='products__container--wrapper'>
+              {!homePath && <ItemFilters filters={filters} setFilters={setFilters} data={data} />}
+              <div ref={productsRef} className={`products__container--items ${maxItemsShow && homePath ? 'has-buttons' : 'grid-style'}`}>
+                {maxItemsShow && homePath && <BackBtn scrollBack={scrollBack} />}
+                <ItemList data={filteredData} />
+                {maxItemsShow && homePath && <ForwardBtn scrollForward={scrollForward} />}
+              </div>
             </div>
           </>
           )}

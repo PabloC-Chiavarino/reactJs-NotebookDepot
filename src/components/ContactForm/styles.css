@@ -88,3 +88,21 @@
   color: #803cb7b0;
   border-color: transparent;
 }
+
+@media screen and (max-width: 1600px) {
+   .contactForm__container {
+      top: 47rem;
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   .contactForm__container {
+      top: 45rem;
+   }
+}
+
+@media screen and (max-width: 1366px) {
+   .contactForm__container {
+      top: 34rem;
+   }
+}

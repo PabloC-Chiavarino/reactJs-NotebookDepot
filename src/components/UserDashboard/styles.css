@@ -84,3 +84,9 @@
     color: #131313;
     }
 }
+
+@media screen and (max-width: 1440px) {
+.userDashboard__options h2 {
+  bottom: 6rem;
+}
+}

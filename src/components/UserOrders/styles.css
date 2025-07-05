@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: flex-start;
   border: 1px solid #ccc;
-  padding: .5rem 3rem .5rem 3rem;
+  padding: 0.5rem 3rem 0.5rem 3rem;
   margin-bottom: 1rem;
   gap: 1rem;
   border-radius: 8px;
@@ -29,4 +29,15 @@
 
 .userOrders__column li {
   margin-bottom: 0.25rem;
+}
+
+@media screen and (max-width: 1366px) {
+  .userOrders__container h1 {
+    font-size: 1.3rem;
+    margin-top: 4rem;
+  }
+
+  .userOrders__row {
+    padding: 0rem 1.5rem 0rem 1.5rem;
+  }
 }

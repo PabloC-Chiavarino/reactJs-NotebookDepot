@@ -65,7 +65,7 @@
   right: 33px;
   position: absolute;
   top: 21px;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .total__container h3 {
@@ -110,4 +110,27 @@
   background-color: whitesmoke;
   color: #803cb7b0;
   border-color: transparent;
+}
+
+@media screen and (max-width: 1366px) {
+  .slider__title {
+    font-size: 1.3rem;
+  }
+
+  .total__price {
+    font-size: 1.3rem;
+  }
+
+  .total__container {
+    top: 25px;
+  }
+
+  .total__container h3 {
+    font-size: 1.3rem;
+  }
+
+  .slider__listContainer {
+    max-height: 255px;
+    margin-top: 1rem;
+  }
 }

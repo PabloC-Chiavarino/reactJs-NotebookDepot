@@ -36,3 +36,9 @@
   font-weight: unset;
   font-size: 14px;
 }
+
+@media screen and (max-width: 1366px) {
+  .buyformModal__container {
+    height: 80%;
+  }
+}

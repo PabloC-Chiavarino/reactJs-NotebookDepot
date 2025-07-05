@@ -8,18 +8,21 @@ const ItemFilters = ({ filters, setFilters, data }) => {
   useEffect(() => {
     if (location.pathname === '/') {
       setFilters({
-        brand: '',
-        processor: '',
-        ram: '',
-        screensize: ''
+        brand: [],
+        processor: [],
+        ram: [],
+        screensize: [],
+        storage: []
       })
     }
   }, [location.pathname])
 
   const getExistingValues = (property) => {
     if (!data) return
-    const values = data.map((prod) => prod[property]
-    )
+    const values = data
+      .map((prod) => prod[property])
+      .filter(value => value !== null && value !== undefined)
+
     const uniqueValues = Array.from(new Set(values))
     return uniqueValues
   }
@@ -28,63 +31,105 @@ const ItemFilters = ({ filters, setFilters, data }) => {
   const processors = getExistingValues('processor')
   const rams = getExistingValues('ram')
   const screensizes = getExistingValues('screensize')
+  const storages = getExistingValues('storage')
 
-  const handleChange = (e) => {
-    setFilters({
-      ...filters,
-      [e.target.name]: e.target.value
-    })
+  const handleCheckboxChange = (e) => {
+    const { name, value, checked } = e.target
+    if (checked) {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [name]: [...prevFilters[name], value]
+      }))
+    } else {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [name]: prevFilters[name].filter((item) => item !== value)
+      }))
+    }
   }
 
   return (
     <div className='filters-bar'>
-      <label className='filter-group'>
+
+      <div className='filter-group'>
         <span className='filter-title'>Marca:</span>
-        <select name='brand' value={filters.brand} onChange={handleChange}>
-          <option value=''>Todas</option>
-          {brands.map((brand) => (
-            <option key={brand} value={brand}>
-              {brand.toUpperCase()}
-            </option>
-          ))}
-        </select>
-      </label>
+        {brands.map((brand) => (
+          <label key={brand} className='checkbox-item'>
+            <input
+              type='checkbox'
+              name='brand'
+              value={brand}
+              checked={filters.brand.includes(brand)}
+              onChange={handleCheckboxChange}
+            />
+            {brand.toUpperCase()}
+          </label>
+        ))}
+      </div>
 
-      <label className='filter-group'>
+      <div className='filter-group'>
         <span className='filter-title'>Procesador:</span>
-        <select name='processor' value={filters.processor} onChange={handleChange}>
-          <option value=''>Todas</option>
-          {processors.map((processor) => (
-            <option key={processor} value={processor}>
-              {processor.toUpperCase()}
-            </option>
-          ))}
-        </select>
-      </label>
+        {processors.map((processor) => (
+          <label key={processor} className='checkbox-item'>
+            <input
+              type='checkbox'
+              name='processor'
+              value={processor}
+              checked={filters.processor.includes(processor)}
+              onChange={handleCheckboxChange}
+            />
+            {processor.toUpperCase()}
+          </label>
+        ))}
+      </div>
 
-      <label className='filter-group'>
+      <div className='filter-group'>
         <span className='filter-title'>RAM:</span>
-        <select name='ram' value={filters.ram} onChange={handleChange}>
-          <option value=''>Todas</option>
-          {rams.map((ram) => (
-            <option key={ram} value={ram}>
-              {ram}
-            </option>
-          ))}
-        </select>
-      </label>
+        {rams.map((ram) => (
+          <label key={ram} className='checkbox-item'>
+            <input
+              type='checkbox'
+              name='ram'
+              value={ram}
+              checked={filters.ram.includes(ram)}
+              onChange={handleCheckboxChange}
+            />
+            {ram}
+          </label>
+        ))}
+      </div>
 
-      <label className='filter-group'>
+      <div className='filter-group'>
+        <span className='filter-title'>Almacenamiento:</span>
+        {storages.map((storage) => (
+          <label key={storage} className='checkbox-item'>
+            <input
+              type='checkbox'
+              name='storage'
+              value={storage}
+              checked={filters.storage.includes(storage)}
+              onChange={handleCheckboxChange}
+            />
+            {storage}
+          </label>
+        ))}
+      </div>
+
+      <div className='filter-group'>
         <span className='filter-title'>Pantalla:</span>
-        <select name='screensize' value={filters.screensize} onChange={handleChange}>
-          <option value=''>Todas</option>
-          {screensizes.map((screensize) => (
-            <option key={screensize} value={screensize}>
-              {screensize}
-            </option>
-          ))}
-        </select>
-      </label>
+        {screensizes.map((screensize) => (
+          <label key={screensize} className='checkbox-item'>
+            <input
+              type='checkbox'
+              name='screensize'
+              value={screensize}
+              checked={filters.screensize.includes(screensize)}
+              onChange={handleCheckboxChange}
+            />
+            {screensize}
+          </label>
+        ))}
+      </div>
     </div>
   )
 }
