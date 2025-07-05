@@ -16,7 +16,8 @@ const ItemListContainer = () => {
     processor: [],
     ram: [],
     screensize: [],
-    storage: []
+    storage: [],
+    search: ''
   })
 
   const homePath = (
@@ -24,7 +25,9 @@ const ItemListContainer = () => {
   )
 
   const filteredData = homePath ? data : data.filter((item) => {
-    const { brand, processor, ram, screensize, storage } = filters
+    const { brand, processor, ram, screensize, storage, search } = filters
+
+    if (search && !item.name.toLowerCase().includes(search.toLowerCase())) return false
 
     if (brand.length > 0 && !brand.includes(item.brand)) return false
     if (processor.length > 0 && !processor.includes(item.processor)) return false
@@ -42,11 +45,11 @@ const ItemListContainer = () => {
   useScroll(sectionRef, scrollType)
 
   const scrollBack = () => {
-    productsRef.current.scrollLeft -= 400
+    productsRef.current.scrollLeft -= 350
   }
 
   const scrollForward = () => {
-    productsRef.current.scrollLeft += 400
+    productsRef.current.scrollLeft += 350
   }
 
   return (
@@ -68,7 +71,16 @@ const ItemListContainer = () => {
               {!homePath && <ItemFilters filters={filters} setFilters={setFilters} data={data} />}
               <div ref={productsRef} className={`products__container--items ${maxItemsShow && homePath ? 'has-buttons' : 'grid-style'}`}>
                 {maxItemsShow && homePath && <BackBtn scrollBack={scrollBack} />}
-                <ItemList data={filteredData} />
+                {filteredData.length === 0
+                  ? (
+                    <div className='no-results'>
+                      <p>No se encontraron productos.</p>
+                    </div>
+                    )
+                  : (
+                    <ItemList data={filteredData} />
+                    )}
+
                 {maxItemsShow && homePath && <ForwardBtn scrollForward={scrollForward} />}
               </div>
             </div>

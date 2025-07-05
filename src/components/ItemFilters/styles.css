@@ -1,14 +1,19 @@
 .filters-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   padding-left: 1rem;
   background-color: #dcdcdc;
   width: 350px;
   animation: fadeIn 0.5s ease-in-out forwards;
   height: 110%;
   z-index: 1;
-  justify-content: center;
+  align-content: center;
+}
+
+.filters-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-height: 750px;
+  gap: 3rem;
+  overflow-y: scroll;
 }
 
 .filter-group {
@@ -20,7 +25,7 @@
 
 .filter-title {
   font-weight: bold;
-  margin-bottom: 0.3rem;
+  margin-bottom: .8rem;
 }
 
 .filter-group label {
