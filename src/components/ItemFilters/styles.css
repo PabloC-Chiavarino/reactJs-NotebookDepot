@@ -41,7 +41,17 @@
 
 @media screen and (max-width: 1600px) {
    .filters-bar {
-      margin-top: 10rem;
-      padding: .2rem;
+      height: 110dvh;
+   }
+
+   .filters-wrapper {
+      max-height: 650px;
+   }
+}
+
+@media screen and (max-width: 1440px) {
+
+   .filters-wrapper {
+      max-height: 600px;
    }
 }

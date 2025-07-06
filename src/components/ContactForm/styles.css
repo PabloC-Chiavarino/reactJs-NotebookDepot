@@ -4,6 +4,7 @@
   position: relative;
   top: 53rem;
   padding-bottom: 5rem;
+  z-index: 1;
 }
 
 .contactForm {
@@ -29,6 +30,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 1rem;
 }
 
 .contactForm__label {
@@ -39,20 +41,20 @@
 }
 
 .contactForm__input {
-  width: 21%;
-  height: 1.5rem;
+  width: 30%;
+  height: 1rem;
   border-radius: 2.5px;
   font-size: 1rem;
   box-shadow: 1px 1px 2px 1px #848484;
   border: none;
-  padding-inline-start: 1rem;
+  padding: 0.5rem;
 }
 
 .contactForm__msg {
   resize: none;
   width: 60%;
   height: 8rem;
-  padding: 1.5rem;
+  padding: 1rem;
   margin: 1rem auto;
   border-radius: 2.5px;
   box-shadow: 1px 1px 2px 1px blac;
@@ -90,19 +92,32 @@
 }
 
 @media screen and (max-width: 1600px) {
-   .contactForm__container {
-      top: 47rem;
-   }
+  .contactForm__container {
+    top: 47rem;
+  }
 }
 
 @media screen and (max-width: 1440px) {
-   .contactForm__container {
-      top: 45rem;
-   }
+  .contactForm__container {
+    top: 45rem;
+  }
 }
 
 @media screen and (max-width: 1366px) {
-   .contactForm__container {
-      top: 34rem;
-   }
+  .contactForm__container {
+    top: 34rem;
+  }
+
+  .contactForm__form {
+    margin-top: 1rem;
+  }
+
+  .contactForm__msg {
+    height: 7rem;
+  }
+
+  .contactForm__submit {
+    width: 185px;
+    height: 44px;
+  }
 }

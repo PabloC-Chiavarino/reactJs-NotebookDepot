@@ -29,6 +29,7 @@
 @media screen and (max-width: 1366px) {
   .forwardBtn {
     top: 50%;
-    right: 3%;
+    right: 5%;
+    width: 60px;
   }
 }

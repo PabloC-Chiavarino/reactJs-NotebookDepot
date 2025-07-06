@@ -112,6 +112,30 @@
   border-color: transparent;
 }
 
+@media screen and (max-width: 1600px) {
+  .slider__title {
+    font-size: 1.5rem;
+  }
+
+  .total__price {
+    font-size: 1.5rem;
+  }
+
+  .total__container {
+    top: 25px;
+  }
+
+  .total__container h3 {
+    font-size: 1.5rem;
+  }
+
+  .slider__listContainer {
+    max-height: 400px;
+    margin-top: 1rem;
+  }
+}
+
+
 @media screen and (max-width: 1366px) {
   .slider__title {
     font-size: 1.3rem;
@@ -121,16 +145,17 @@
     font-size: 1.3rem;
   }
 
-  .total__container {
-    top: 25px;
-  }
-
   .total__container h3 {
     font-size: 1.3rem;
   }
 
   .slider__listContainer {
     max-height: 255px;
-    margin-top: 1rem;
+  }
+
+  .slider__goToCartBtn {
+  display: flex;
+  width: 185px;
+  height: 44px;
   }
 }

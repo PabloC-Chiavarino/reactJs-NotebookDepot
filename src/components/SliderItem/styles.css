@@ -90,6 +90,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1600px) {
+  .slider__item--name {
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .slider__item--info {
     margin-left: 8.5rem;

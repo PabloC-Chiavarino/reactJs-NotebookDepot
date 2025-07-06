@@ -29,6 +29,7 @@
 @media screen and (max-width: 1366px) {
   .backBtn {
     top: 50%;
-    left: 3%;
+    left: 5%;
+    width: 60px;
   }
 }

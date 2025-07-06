@@ -35,3 +35,10 @@
    animation-iteration-count: infinite;
    margin-left: .25rem;
 }
+
+@media screen and (max-width: 1366px) {
+   .title__container {
+      font-size: .8rem;
+      margin-top: 3rem;
+   }
+}

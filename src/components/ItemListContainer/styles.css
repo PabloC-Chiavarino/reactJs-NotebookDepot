@@ -6,7 +6,7 @@
 
 .products__container--wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 3rem;
   padding-bottom: 10rem;
   height: 100%;
@@ -55,10 +55,24 @@
   .products__container--items {
     margin-top: 13rem;
   }
+
+  .products__container--items.grid-style {
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0;
+  }
 }
 
 @media screen and (max-width: 1366px) {
   .products__container {
     height: 120dvh;
+  }
+
+  .products__container--items {
+    margin-top: 8rem;
+  }
+
+  .products__container--items.has-buttons {
+    width: 1050px;
   }
 }

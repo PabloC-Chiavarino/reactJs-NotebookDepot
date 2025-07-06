@@ -140,10 +140,24 @@
 }
 
 .tech-specs__item {
-  flex: 0 1 30%; /* ocupa casi la mitad del ancho disponible */
-  font-size: 1rem; /* fuente un poco más grande */
+  flex: 0 1 30%;
+  font-size: 1rem;
   color: #222;
-  font-weight: 600; /* semi-bold */
+  font-weight: 600;
   letter-spacing: 0.8px;
-  
 }
+
+@media screen and (max-width: 1600px) {
+  .detail__img {
+    width: 350px;
+  }
+
+  .detail__name {
+    font-size: 2rem;
+  }
+
+  .detail__price {
+  font-size: 1.8rem;
+}
+}
+

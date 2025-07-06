@@ -90,3 +90,11 @@
   gap: 5px;
   margin-top: -5px;
 }
+
+@media screen and (max-width: 1366px) {
+  .userSignUp__button {
+    width: 185px;
+    height: 44px;
+  }
+}
+
