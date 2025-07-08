@@ -95,11 +95,15 @@ export const generalErr = (err) => {
   })
 }
 
-export const mustBeLogged = (string) => {
-  Swal.fire({
+export const mustBeLogged = () => {
+  return Swal.fire({
     icon: 'warning',
-    title: 'Oops...',
-    text: `Debés iniciar sesión para ${string}.`
+    title: 'Debés iniciar sesión',
+    text: '¿Deseás hacerlo ahora?',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, iniciar sesión',
+    cancelButtonText: 'Cancelar',
+    reverseButtons: true
   })
 }
 

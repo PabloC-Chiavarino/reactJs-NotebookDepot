@@ -18,3 +18,9 @@
     outline: none;
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .search-input {
+    top: 9rem;
+  }
+}

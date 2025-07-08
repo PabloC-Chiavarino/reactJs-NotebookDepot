@@ -33,3 +33,15 @@
     width: 60px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .forwardBtn {
+    right: 2%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .forwardBtn {
+    right: 4%;
+  }
+}

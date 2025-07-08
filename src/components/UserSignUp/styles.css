@@ -1,14 +1,13 @@
 .userSignUp__container {
   width: 100dvw;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
-  height: 100dvh;
   background-image: url("../../assets/imgs/defaultBackground.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 7rem;
   margin-bottom: -100dvh;
   animation: fadeIn 0.5s ease-in-out forwards;
 }
@@ -17,6 +16,7 @@
   letter-spacing: 1px;
   font-weight: 500;
   font-size: 2.7rem;
+  margin-top: 12rem;
 }
 
 .userSignUp__form-container {
@@ -92,9 +92,26 @@
 }
 
 @media screen and (max-width: 1366px) {
+  .userSignUp__container h1 {
+    margin-top: 9rem;
+    font-size: 2.25rem;
+  }
+
+  .userSignUp__form-container {
+    margin-top: 1rem;
+  }
+
+  .userSignUp__options-container {
+    margin-top: 2rem;
+  }
+
+  .userSignUp__input {
+    margin-top: 1rem;
+    margin-bottom: 1.1rem;
+  }
+
   .userSignUp__button {
     width: 185px;
     height: 44px;
   }
 }
-

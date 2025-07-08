@@ -50,10 +50,8 @@ const UserData = () => {
 
   return (
     <>
-      <div>
-        <h1>Datos de usuario</h1>
-      </div>
       <div className='userDataForm__container'>
+        <h1>Datos de usuario</h1>
         <form className='userDataForm' onSubmit={onSubmit}>
           <div className='userDataForm__userData'>
             <div className='userDataForm__column'>

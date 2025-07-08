@@ -117,3 +117,9 @@
     bottom: 3rem;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .userDashboard__main {
+    justify-content: initial;
+  }
+}

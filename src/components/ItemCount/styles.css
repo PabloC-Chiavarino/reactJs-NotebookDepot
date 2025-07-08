@@ -1,67 +1,91 @@
 .card__buttons--container {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    position: absolute;
-    align-items: center;
-    bottom: 96px;
-    right: 85px;
-    height: fit-content;
-    width: 240px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  position: absolute;
+  align-items: center;
+  bottom: 96px;
+  right: 85px;
+  height: fit-content;
+  width: 240px;
 }
 
 .card__buttons--subContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 70px;
-  }
-
-.card__buttons--minus, .card__buttons--plus {
-    width: 32px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 70px;
 }
 
-.card__buttons--minus:hover, .card__buttons--plus:hover {
-    transform: rotate(180deg);
-    cursor: pointer;
+.card__buttons--minus,
+.card__buttons--plus {
+  width: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.card__buttons--minus:hover,
+.card__buttons--plus:hover {
+  transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .card__input {
-    width: 20px;
-    text-align: center;
-    border: 1px solid darkgrey;
-    border-radius: 2px;
-    opacity: 0.8;
-    background: transparent;
-    outline: none;
-    font-family: 'anton', sans-serif;
-    font-size: 1rem;
-    position: absolute;
+  width: 20px;
+  text-align: center;
+  border: 1px solid darkgrey;
+  border-radius: 2px;
+  opacity: 0.8;
+  background: transparent;
+  outline: none;
+  font-family: "anton", sans-serif;
+  font-size: 1rem;
+  position: absolute;
 }
 
 .addBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 205px;
-    height: 48px;
-    text-decoration: none;
-    border: none;
-    font-family: 'wix madefor display', sans-serif;
-    background-color: #404040;
-    color: whitesmoke;
-    transition: 0.3s;
-    letter-spacing: 1px;
-    font-size: 14px;
-    margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 205px;
+  height: 48px;
+  text-decoration: none;
+  border: none;
+  font-family: "wix madefor display", sans-serif;
+  background-color: #404040;
+  color: whitesmoke;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-top: 30px;
 }
 
 .addBtn:hover {
-    cursor: pointer;
-    background-color: whitesmoke;
-    color:#404040;
-    border-color: transparent;
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #404040;
+  border-color: transparent;
+}
+
+@media screen and (max-width: 1366px) {
+  .card__buttons--container {
+    bottom: 65px;
+  }
+
+  .card__buttons--minus, .card__buttons--plus {
+    width: 28px;
+  }
+
+  .addBtn {
+    width: 185px;
+    height: 44px;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card__buttons--container {
+    right: 30px;
+  }
 }

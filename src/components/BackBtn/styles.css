@@ -33,3 +33,15 @@
     width: 60px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .backBtn {
+    left: 2%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .backBtn {
+    left: 4%;
+  }
+}

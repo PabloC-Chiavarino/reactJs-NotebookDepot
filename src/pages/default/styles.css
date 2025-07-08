@@ -5,3 +5,9 @@
    position: relative;
    top: 90dvh;
 }
+
+@media screen and (max-width: 1366px) {
+   .productsSection {
+      height: 135dvh;
+   }
+}

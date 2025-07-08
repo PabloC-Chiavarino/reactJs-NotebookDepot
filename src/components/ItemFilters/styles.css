@@ -55,3 +55,21 @@
       max-height: 600px;
    }
 }
+
+@media screen and (max-width: 1366px) {
+
+     .filters-bar {
+      height: 135dvh;
+   }
+
+   .filters-wrapper {
+      max-height: 450px;
+      gap: 2rem;
+   }
+
+   .filter-group {
+    gap: .3rem;
+    font-size: .8rem;
+   }
+}
+

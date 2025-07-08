@@ -103,6 +103,7 @@
   font-size: 15px;
   border: none;
   position: relative;
+  font-family: "Wix Madefor Display", sans-serif;
 }
 
 .slider__goToCartBtn:hover {
@@ -157,5 +158,11 @@
   display: flex;
   width: 185px;
   height: 44px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .slider__container {
+    width: 30%;
   }
 }

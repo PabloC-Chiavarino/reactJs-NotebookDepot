@@ -1,7 +1,4 @@
 .userDataForm__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 2rem;
 }
 
@@ -103,5 +100,20 @@
   .userDataForm__submit--btn {
     position: absolute;
     top: 33rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .userDataForm {
+    width: 95%;
+  }
+
+  .userDataForm__column {
+    min-width: 200px;
+  }
+
+  .userDataForm__fieldRow input {
+    width: 225px;
   }
 }

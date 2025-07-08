@@ -3,7 +3,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { stripePromise } from '../../constants/services/stripe'
 import { addDoc, collection, doc, setDoc } from 'firebase/firestore'
 import { dataBase } from '../../constants/services/firebase'
-import { generalErr, mailConfirmErr, mustBeLogged } from '../../constants/utils'
+import { generalErr, mailConfirmErr } from '../../constants/utils'
 import { useAuthContext, useCartContext, useScroll } from '../../hooks'
 import { MainBtn, BuyFormModal, OpacityDiv, CartList } from '../../components'
 import { binBig } from '../../assets/icons'
@@ -21,7 +21,7 @@ const Cart = () => {
   useScroll(ref, 'element')
 
   const handleOnClick = () => {
-    user ? setFormShow(!formShow) : mustBeLogged('continuar con tu compra')
+    setFormShow(!formShow)
   }
 
   const handleFormData = (event) => {

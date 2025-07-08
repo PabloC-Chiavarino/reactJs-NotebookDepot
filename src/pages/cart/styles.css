@@ -109,6 +109,7 @@
   position: absolute;
   bottom: 9rem;
   right: 9rem;
+  z-index: 1;
 }
 
 .cart__checkoutBtn {
@@ -229,5 +230,28 @@
 
   .cart__erase {
     width: 55px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cart__erase--container {
+    top: 9.5rem;
+  }
+
+  .cart__erase {
+    width: 45px;
+  }
+
+  .cart__total--container {
+    font-size: 0.9rem;
+  }
+
+  .cart__checkoutBtn--container {
+    bottom: 5rem;
+    right: 2rem;
+  }
+
+  .navigate__options--container {
+    bottom: 1rem;
   }
 }

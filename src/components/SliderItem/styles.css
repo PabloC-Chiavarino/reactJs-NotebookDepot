@@ -114,6 +114,21 @@
 
   .slider__item--delete {
     transform: scale(0.35);
+  }
 }
 
+@media screen and (max-width: 1280px) {
+  .slider__item--info {
+    margin-left: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slider__item--info {
+    margin-left: 6.5rem;
+  }
+
+  .slider__item--img {
+    width: 65px;
+  }
 }

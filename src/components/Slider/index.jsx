@@ -1,10 +1,26 @@
-import { Link } from 'react-router-dom'
-import { useCartContext } from '../../hooks'
+import { useNavigate } from 'react-router-dom'
+import { useCartContext, useAuthContext } from '../../hooks'
 import SliderItem from '../SliderItem'
+import { mustBeLogged } from '../../constants/utils'
 import './styles.css'
 
 const Slider = ({ show, onClose }) => {
   const { cartProducts, cartTotalPrice } = useCartContext()
+  const navigate = useNavigate()
+  const { user } = useAuthContext()
+
+  const handleOnClick = async () => {
+    if (user) {
+      navigate('/cart')
+      onClose()
+    } else {
+      const result = await mustBeLogged()
+      if (result.isConfirmed) {
+        navigate('account/signIn')
+        onClose()
+      }
+    }
+  }
 
   return (
     <div
@@ -31,9 +47,9 @@ const Slider = ({ show, onClose }) => {
               <h4 className='total__price'> ${cartTotalPrice()}</h4>
             </div>
             <div className='slider__goToCartBtn--container'>
-              <Link to='/cart' onClick={onClose} className='slider__goToCartBtn'>
+              <button to='/cart' onClick={handleOnClick} className='slider__goToCartBtn'>
                 Ir al carrito
-              </Link>
+              </button>
             </div>
           </>
           )}

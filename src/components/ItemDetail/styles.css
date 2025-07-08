@@ -157,7 +157,96 @@
   }
 
   .detail__price {
-  font-size: 1.8rem;
-}
+    font-size: 1.8rem;
+  }
 }
 
+@media screen and (max-width: 1366px) {
+  .detail__container {
+    width: 80%;
+    bottom: 4rem;
+    max-width: 80rem;
+    font-size: 15px;
+    height: 20rem;
+  }
+
+  .detail__img {
+    width: 275px;
+    padding-left: 0;
+    padding-right: 5rem;
+  }
+
+  .detail__name {
+    font-size: 1.3rem;
+  }
+
+  .detail__description--container {
+    width: 450px;
+    top: 40px;
+  }
+
+  .detail__description {
+    max-height: 75px;
+    overflow-y: scroll;
+  }
+
+  .detail__price--container {
+    top: 125px;
+  }
+
+  .detail__price {
+    font-size: 1.5rem;
+  }
+
+  .heart-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .detail__stock--container {
+    top: 170px;
+  }
+
+  .detail__mainBtn--container {
+    bottom: 1rem;
+  }
+
+  .tech-specs__container {
+    gap: 0.5rem;
+    margin-top: 20rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .detail__container {
+    bottom: 5rem;
+  }
+
+  .detail__img {
+    width: 250px;
+  }
+
+  .heart-btn {
+    right: 12px;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .detail__container {
+    width: 90%;
+  }
+
+  .detail__img {
+    width: 225px;
+  }
+
+  .detail__description--container {
+    width: 405px;
+  }
+  
+  .tech-specs__container {
+    margin-top: 22rem;
+  }
+}

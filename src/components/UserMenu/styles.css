@@ -120,4 +120,19 @@
     font-size: 1rem;
     top: 15rem;
   }
+
+  .userMenu__button {
+    width: 185px;
+    height: 44px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+ .userMenu__container {
+    width: 30%;
+  }
+
+  .userMenu__info {
+    top: 17rem;
+  }
 }
