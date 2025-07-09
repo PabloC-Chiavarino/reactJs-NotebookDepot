@@ -3,10 +3,8 @@
   align-items: end;
   right: 5.5rem;
   position: absolute;
-  bottom: 10px;
   width: fit-content;
   justify-content: center;
-  align-self: end;
 }
 
 .userWidget__container img {

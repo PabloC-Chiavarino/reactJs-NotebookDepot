@@ -16,3 +16,5 @@ export { default as accountIconDisabled } from '../icons/accountBig_disabled.png
 export { default as DownChevron } from '../icons/down-chevron.png'
 export { default as favImg } from '../icons/favImg.svg'
 export { default as noFavImg } from '../icons/noFavImg.svg'
+export { default as hamburguerIcon } from '../icons/hamburguer.png'
+export { default as filtersIcon } from '../icons/filters.png'
