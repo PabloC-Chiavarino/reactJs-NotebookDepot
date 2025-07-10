@@ -11,3 +11,10 @@
       height: 135dvh;
    }
 }
+
+@media screen and (max-width: 768px) {
+   .productsSection {
+      top: 55dvh;
+      height: 100dvh;
+   }
+}

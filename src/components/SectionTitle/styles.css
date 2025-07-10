@@ -13,7 +13,6 @@
 .title__container {
    width: 100%;
    margin-top: 5rem;
-   margin-left: 3rem;
    position: absolute;
    font-family: "wix madefor display";
    font-weight: bold;
@@ -42,3 +41,4 @@
       margin-top: 8rem;
    }
 }
+

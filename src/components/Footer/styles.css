@@ -112,3 +112,13 @@
     top: 80dvh;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .footer__container {
+    top: 42dvh;
+  }
+  
+  .footer__subcontainer {
+    width: 95%;
+  }
+}

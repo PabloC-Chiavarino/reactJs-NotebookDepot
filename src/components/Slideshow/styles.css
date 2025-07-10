@@ -3,6 +3,7 @@
    width: 100dvw;
    height: 85dvh;
    top: 60px;
+   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 .slideshow__collection {
@@ -24,4 +25,10 @@
 
 .hidden {
    opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+   .slideshow__container {
+      height: 40dvh;
+   }
 }

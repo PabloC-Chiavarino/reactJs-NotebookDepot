@@ -108,3 +108,18 @@
     gap: 1rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .products__container--items {
+    gap: 1rem;
+  }
+
+  .products__container--items.has-buttons {
+    width: 505px;
+    justify-content: initial;
+  }
+
+  .products__container--wrapper {
+    gap: 1rem;
+  }
+}

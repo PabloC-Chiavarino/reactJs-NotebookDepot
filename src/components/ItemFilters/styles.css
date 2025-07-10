@@ -73,3 +73,15 @@
    }
 }
 
+@media screen and (max-width: 768px) {
+   .filters-bar {
+      width: 260px;
+      height: 100dvh;
+   }
+
+   .filters-wrapper {
+      max-height: 710px;
+      margin-top: 10rem;
+   }
+}
+

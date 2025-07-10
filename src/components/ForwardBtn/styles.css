@@ -45,3 +45,10 @@
     right: 4%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .forwardBtn {
+    width: 65px;
+    top: 60%;
+  }
+}

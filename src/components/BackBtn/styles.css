@@ -45,3 +45,10 @@
     left: 4%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .backBtn {
+    top: 60%;
+    width: 65px;
+  }
+}

@@ -127,3 +127,14 @@
     top: 37rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .contactForm__container {
+    top: 28rem;
+  }
+
+  .contactForm {
+    padding-top: 3rem;
+    width: 100%;
+  }
+}
