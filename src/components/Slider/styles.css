@@ -6,10 +6,11 @@
   flex-direction: column;
   position: fixed;
   top: 62px;
+  background-image: url("/src/assets/imgs/defaultBackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   right: 0;
-  background-color: ghostwhite;
   font-family: "wix madefor display", sans-serif;
-  background-color: #dcdcdc;
   transition: 0.2s ease-in-out;
   user-select: none;
 }
@@ -136,7 +137,6 @@
   }
 }
 
-
 @media screen and (max-width: 1366px) {
   .slider__title {
     font-size: 1.3rem;
@@ -155,9 +155,9 @@
   }
 
   .slider__goToCartBtn {
-  display: flex;
-  width: 185px;
-  height: 44px;
+    display: flex;
+    width: 185px;
+    height: 44px;
   }
 }
 

@@ -3,7 +3,9 @@
   width: 30%;
   height: 100%;
   padding: 2rem;
-  background-color: #dcdcdc;
+  background-image: url("/src/assets/imgs/defaultBackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   top: 62px;
   left: 0;

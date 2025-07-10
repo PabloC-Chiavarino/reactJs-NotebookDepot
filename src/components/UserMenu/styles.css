@@ -4,7 +4,9 @@
   width: 23%;
   height: 86%;
   padding: 2rem;
-  background-color: #dcdcdc;
+  background-image: url("/src/assets/imgs/defaultBackground.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   top: 62px;
   right: 0;
@@ -113,8 +115,8 @@
   }
 
   .userMenu__accountIcon--container {
-  height: 35%;
-}
+    height: 35%;
+  }
 
   .userMenu__info {
     font-size: 1rem;
@@ -128,7 +130,7 @@
 }
 
 @media screen and (max-width: 1024px) {
- .userMenu__container {
+  .userMenu__container {
     width: 30%;
   }
 
